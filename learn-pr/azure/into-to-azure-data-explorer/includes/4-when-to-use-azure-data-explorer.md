@@ -79,4 +79,4 @@ The following table shows how to evaluate new use cases. While all use cases are
 
 The following flowchart table summarizes the key questions to ask when you're considering using Azure Data Explorer.
 
-:::image type="content" source="../media/when-to-use-adx.png" alt-text="Flowchart showing when to use Azure Data Explorer. Questions include: do you need to read and write a specific record, do you need to perform long running tasks, classic data warehouse, must run on other clouds, and small data.":::
+:::image type="content" source="../media/when-to-use-azure-data-explorer.png" alt-text="Flowchart showing when to use Azure Data Explorer. Questions include: do you need to read and write a specific record, do you need to perform long running tasks, classic data warehouse, must run on other clouds, and small data.":::
