@@ -8037,6 +8037,34 @@
       "redirect_document_id": true
     },
     {
+      "source_path_from_root": "/learn-pr/azure/intro-to-azure-data-explorer/intro-to-azure-data-explorer/1-introduction.yml",
+      "redirect_url": "/training/modules/intro-to-azure-data-explorer/1-introduction"
+    },
+    {
+      "source_path_from_root": "/learn-pr/azure/intro-to-azure-data-explorer/intro-to-azure-data-explorer/2-what-is-azure-data-explorer.yml",
+      "redirect_url": "/training/modules/intro-to-azure-data-explorer/2-what-is-azure-data-explorer"
+    },
+    {
+      "source_path_from_root": "/learn-pr/azure/intro-to-azure-data-explorer/intro-to-azure-data-explorer/3-how-azure-data-explorer-works.yml",
+      "redirect_url": "/training/modules/intro-to-azure-data-explorer/3-how-azure-data-explorer-works"
+    },
+    {
+      "source_path_from_root": "/learn-pr/azure/intro-to-azure-data-explorer/intro-to-azure-data-explorer/4-when-to-use-azure-data-explorer.yml",
+      "redirect_url": "/training/modules/intro-to-azure-data-explorer/4-when-to-use-azure-data-explorer"
+    },
+    {
+      "source_path_from_root": "/learn-pr/azure/intro-to-azure-data-explorer/intro-to-azure-data-explorer/5-knowledge-check.yml",
+      "redirect_url": "/training/modules/intro-to-azure-data-explorer/5-knowledge-check"
+    },
+    {
+      "source_path_from_root": "/learn-pr/azure/intro-to-azure-data-explorer/intro-to-azure-data-explorer/6-summary.yml",
+      "redirect_url": "/training/modules/intro-to-azure-data-explorer/6-summary"
+    },
+    {
+      "source_path_from_root": "/learn-pr/azure/intro-to-azure-data-explorer/intro-to-azure-data-explorer/index.yml",
+      "redirect_url": "/training/modules/intro-to-azure-data-explorer"
+    },
+    {
       "source_path_from_root": "/learn-pr/azure/intro-to-azure-data-lake-storage/1-introduction.md",
       "redirect_url": "/training/modules/introduction-to-azure-data-lake-storage/1-introduction"
     },
