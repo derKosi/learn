@@ -6,10 +6,10 @@ Effective indexing starts with understanding how your application queries data. 
 
 You can start by cataloging your application's query patterns:
 
-1. **Filter properties:** Which properties appear in `WHERE` clauses? Are they equality filters (`=`) or range filters (`>`, `<`)?
-1. **Sort properties:** Which properties appear in `ORDER BY` clauses? What sort directions (ascending or descending) does the application use?
-1. **Property combinations:** Which properties appear together in the same query? Do queries filter on one property and sort by another?
-1. **Access frequency:** How often does each query pattern execute? Prioritize indexes for frequent queries.
+- **Filter properties:** Which properties appear in `WHERE` clauses? Are they equality filters (`=`) or range filters (`>`, `<`)?
+- **Sort properties:** Which properties appear in `ORDER BY` clauses? What sort directions (ascending or descending) does the application use?
+- **Property combinations:** Which properties appear together in the same query? Do queries filter on one property and sort by another?
+- **Access frequency:** How often does each query pattern execute? Prioritize indexes for frequent queries.
 
 This analysis reveals which indexes provide the most value. A query that executes thousands of times per minute justifies more index overhead than a query that runs once per day.
 
