@@ -10,4 +10,4 @@ metadata:
   ms.topic: unit
 durationInMinutes: 12
 content: |
-  [!include[](includes/configure-microsoft-foundry-hubs-region.md)]
+  [!include[](includes/2-configure-microsoft-foundry-hubs-region.md)]
