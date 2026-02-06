@@ -3,11 +3,11 @@ uid: learn.wwl.design-solutions-securing-server-client-endpoints.summary
 title: Summary - Design solutions for securing server and client endpoints
 metadata:
   title: Summary - Design solutions for securing server and client endpoints
-  description: "Summary of the module on the topic: design solutions for securing server and client endpoints."
-  ms.date: 09/26/2024
+  description: "Review what you learned about designing endpoint security solutions and explore additional resources for servers, clients, IoT, OT, security baselines, remote access, and Windows LAPS."
+  ms.date: 02/05/2026
   author: ceperezb
   ms.author: ceperezb
   ms.topic: unit
-durationInMinutes: 10
+durationInMinutes: 3
 content: |
   [!include[](includes/10-summary.md)]
