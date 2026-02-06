@@ -1,4 +1,4 @@
-n this exercise, you compare and tune vector indexing strategies to optimize query performance in Azure Cosmos DB for NoSQL. Vector indexes significantly impact both search quality and Request Unit (RU) consumption. You create containers with three different index types—flat, quantizedFlat, and diskANN—load identical sample data, and run comparative searches to measure performance differences. This hands-on practice helps you select the right indexing strategy for your AI application's requirements.
+In this exercise, you compare and tune vector indexing strategies to optimize query performance in Azure Cosmos DB for NoSQL. Vector indexes significantly impact both search quality and Request Unit (RU) consumption. You create containers with three different index types—flat, quantizedFlat, and diskANN—load identical sample data, and run comparative searches to measure performance differences. This hands-on practice helps you select the right indexing strategy for your AI application's requirements.
 
 Tasks performed in this exercise:
 
