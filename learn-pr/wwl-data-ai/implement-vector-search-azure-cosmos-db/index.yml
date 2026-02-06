@@ -32,6 +32,7 @@ products:
 - azure-cosmos-db
 subjects:
 - databases
+- artificial-intelligence
 units:
 - learn.wwl.implement-vector-search-azure-cosmos-db.introduction
 - learn.wwl.implement-vector-search-azure-cosmos-db.store-retrieve-embeddings
