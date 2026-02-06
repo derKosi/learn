@@ -24,12 +24,12 @@ quiz:
     - content: "Create service principals for each contractor with certificate-based authentication and Contributor role on all workspaces, storing certificates in Azure Key Vault with 90-day expiration"
       isCorrect: false
       explanation: "This option uses service principals incorrectly—these are for applications, not human users—and grants excessive permissions (Contributor instead of Reader) while complicating authentication unnecessarily."
-  - content: "Your security team reports suspicious activity: a data scientist's account authenticated to Azure Machine Learning studio from three different countries within 2 hours, which is physically impossible. The affected user confirms their password hasn't been shared. You need to prevent this type of attack while minimizing impact on legitimate users who travel frequently for conferences. Which Conditional Access policy configuration best addresses this threat?"
+  - content: "Your security team reports suspicious activity: a data scientist's account authenticated to Azure Machine Learning studio from three different countries/regions within 2 hours, which is physically impossible. The affected user confirms their password hasn't been shared. You need to prevent this type of attack while minimizing impact on legitimate users who travel frequently for conferences. Which Conditional Access policy configuration best addresses this threat?"
     choices:
     - content: "Create a policy requiring compliant device plus MFA for all Azure Machine Learning access from any location, with session sign-in frequency set to 1 hour to force frequent reauthentication"
       isCorrect: false
       explanation: "This option creates excessive friction—hourly reauthentication disrupts long-running training jobs and doesn't specifically address the geographic impossibility threat."
-    - content: "Block all Azure Machine Learning access from locations outside your company's home country, with no exceptions, and require VPN connectivity for international travelers"
+    - content: "Block all Azure Machine Learning access from locations outside your company's home country/region, with no exceptions, and require VPN connectivity for international travelers"
       isCorrect: false
       explanation: "This option completely prevents legitimate international collaboration and conference attendance, contradicting business requirements while creating VPN performance bottlenecks."
     - content: "Implement risk-based sign-in policy that requires MFA for medium and high-risk authentications, combined with Impossible Travel anomaly detection that automatically blocks suspicious sign-ins pending security review"
