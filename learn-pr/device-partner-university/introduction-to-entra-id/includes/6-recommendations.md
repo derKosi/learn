@@ -19,19 +19,19 @@ These devices are provisioned using Windows Autopilot, joined directly to Entra 
 >
 >The recommended approach is to integrate devices with Microsoft Entra ID and manage them using cloud-based tools. This enables organizations to optimize resource management, improve operational efficiency, and maintain competitiveness.
 
-The recommended approach is to integrate devices with Microsoft Entra ID and manage them using cloud-based tools. This enables organizations to optimize resource management, improve operational efficiency, and maintain competitiveness. Entra join does not prevent access to on-premises resources, and organizations transitioning to cloud-native Windows can continue to use on-premises Active Directory for applications or services that require it.
+The recommended approach is to integrate devices with Microsoft Entra ID and manage them using cloud-based tools. This enables organizations to optimize resource management, improve operational efficiency, and maintain competitiveness. Entra join doesn't prevent access to on-premises resources, and organizations transitioning to cloud-native Windows can continue to use on-premises Active Directory for applications or services that require it.
 
 ## User scenarios
 
 Entra join is the preferred choice for connecting devices to Microsoft Entra ID. It supports cloud-first management, enables modern provisioning with Windows Autopilot, and integrates seamlessly with Microsoft Intune and Microsoft 365 applications.
 
-That said, some devices or environments may require on-premises or hybrid join, such as:
+That said, some devices or environments might require on-premises or hybrid join, such as:
 
 - Air-gapped networks or devices.
-- Devices running applications with non-standard authentication mechanisms that depend on on-premises Active Directory.
+- Devices running applications with nonstandard authentication mechanisms that depend on on-premises Active Directory.
 - Organizational or regulatory requirements that mandate on-premises management.
 
-Using on-premises or hybrid join for a subset of devices does not limit your entire environment. Organizations can mix device join types as needed while keeping Entra join as the default.
+Using on-premises or hybrid join for a subset of devices doesn't limit your entire environment. Organizations can mix device join types as needed while keeping Entra join as the default.
 
 | Feature / aspect           | Entra Join (Azure AD Join) | Entra Hybrid Join (Hybrid Azure AD Join)  |
 | -------------------------- | -------------------------- | ----------------------------------------- |
