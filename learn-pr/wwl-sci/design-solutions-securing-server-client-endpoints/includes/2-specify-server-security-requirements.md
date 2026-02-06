@@ -45,9 +45,9 @@ Windows Server environments require specific attention to:
 
 Linux security requirements vary by distribution but should address:
 
-- **SSH hardening**: Require key-based authentication, disable root login, and limit SSH access to specific users or groups
+- **SSH hardening**: Require key-based authentication, disable root sign-in, and limit SSH access to specific users or groups
 - **SELinux or AppArmor**: Specify mandatory access control requirements based on your distribution (SELinux for RHEL-based distributions, AppArmor for Ubuntu/SUSE)
-- **Firewall configuration**: Require firewalld or iptables rules that implement least-privilege network access
+- **Firewall configuration**: Require firewall or iptables rules that implement least-privilege network access
 - **Package management**: Specify approved repositories and require signed packages
 - **File system permissions**: Define requirements for sensitive file permissions and the use of access control lists (ACLs)
 
@@ -57,7 +57,7 @@ Server security requirements vary based on where servers are deployed. Your spec
 
 ### Azure virtual machines
 
-For Azure-hosted servers, leverage platform capabilities in your requirements:
+For Azure-hosted servers, use platform capabilities in your requirements:
 
 - **Microsoft Defender for Servers**: Require either Plan 1 or Plan 2 based on protection needs. Plan 1 provides Defender for Endpoint integration for EDR capabilities. Plan 2 adds agentless scanning, file integrity monitoring, and just-in-time VM access.
 - **Network security groups**: Require NSGs on all subnets with rules that follow least-privilege principles
@@ -91,7 +91,7 @@ Beyond baseline security, specify requirements for active threat protection:
 
 **Vulnerability scanning**: Specify scanning frequency and remediation timelines:
 
-- Critical vulnerabilities: Remediate within 7 days
+- Critical vulnerabilities: Remediate within seven days
 - High vulnerabilities: Remediate within 30 days
 - Medium vulnerabilities: Remediate within 90 days
 
@@ -106,7 +106,7 @@ Your server security requirements must address applicable regulations:
 | Regulation | Key server requirements |
 | --- | --- |
 | **PCI-DSS** | Quarterly vulnerability scans, file integrity monitoring, strong cryptography, audit logging |
-| **HIPAA** | Access controls, audit controls, encryption, automatic logoff |
+| **HIPAA** | Access controls, audit controls, encryption, automatic sign out |
 | **SOC 2** | Logical access controls, system monitoring, change management, encryption |
 | **ISO 27001** | Asset management, access control, cryptography, operations security |
 

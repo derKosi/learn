@@ -7,7 +7,7 @@ Security requirements for IoT and embedded systems should begin with threat mode
 Divide your IoT architecture into security zones:
 
 - **Device zone**: Physical devices and their immediate environment
-- **Gateway zone**: Edge devices that aggregate and process data locally
+- **Gateway zone**: Microsoft Edge devices that aggregate and process data locally
 - **Cloud zone**: Cloud-based services for data processing and management
 - **Operations zone**: User interfaces and management systems
 
@@ -36,7 +36,7 @@ Strong device identity forms the foundation of IoT security. Unlike user authent
 - Track device health, patch status, and security state
 - Enable query-based grouping for scaled operations and access control
 
-For legacy devices that cannot support strong identity, require IoT gateways to act as guardians. The gateway authenticates to cloud services on behalf of less-capable devices while enforcing security policies locally.
+For legacy devices that can't support strong identity, require IoT gateways to act as guardians. The gateway authenticates to cloud services on behalf of less-capable devices while enforcing security policies locally.
 
 ## Define network security requirements
 
@@ -64,7 +64,7 @@ For operational technology (OT) environments, require alignment with the Purdue 
 
 ## Specify threat detection and monitoring
 
-Continuous monitoring is essential for detecting threats in IoT environments, particularly for legacy devices that cannot run security agents.
+Continuous monitoring is essential for detecting threats in IoT environments, particularly for legacy devices that can't run security agents.
 
 **Network-based detection**: Require agentless network sensors that:
 
@@ -90,7 +90,7 @@ Microsoft Defender for IoT provides these capabilities through OT network sensor
 
 ## Define update management requirements
 
-Devices that cannot receive security updates become permanent vulnerabilities. Specify update mechanisms that support the full device lifecycle.
+Devices that can't receive security updates become permanent vulnerabilities. Specify update mechanisms that support the full device lifecycle.
 
 **Update capabilities**: Require devices to support:
 
@@ -108,7 +108,7 @@ Devices that cannot receive security updates become permanent vulnerabilities. S
 
 - Supported device lifetime with committed security updates
 - Decommissioning procedures for devices reaching end of support
-- Replacement timelines for devices that cannot be updated
+- Replacement timelines for devices that can't be updated
 
 ## Apply zero-trust principles
 
@@ -142,7 +142,7 @@ Zero-trust architecture assumes breach and requires verification for every acces
 
 When specifying IoT and embedded security requirements, consider:
 
-**Device constraints**: Many IoT devices have limited processing power, memory, and storage. Requirements must account for devices that cannot run full security agents or support complex cryptographic operations.
+**Device constraints**: Many IoT devices have limited processing power, memory, and storage. Requirements must account for devices that can't run full security agents or support complex cryptographic operations.
 
 **Operational continuity**: Industrial and OT environments prioritize availability. Security controls must not disrupt critical processes. Plan for maintenance windows and gradual rollouts.
 

@@ -1,4 +1,4 @@
-Security architects evaluating solutions for operational technology (OT) and industrial control systems (ICS) face unique challenges. Traditional security tools designed for IT environments often cannot monitor specialized industrial protocols or deploy agents on embedded controllers. Microsoft Defender for IoT addresses these challenges through agentless network monitoring purpose-built for OT environments.
+Security architects evaluating solutions for operational technology (OT) and industrial control systems (ICS) face unique challenges. Traditional security tools designed for IT environments often can't monitor specialized industrial protocols or deploy agents on embedded controllers. Microsoft Defender for IoT addresses these challenges through agentless network monitoring purpose-built for OT environments.
 
 ## Evaluate the solution architecture
 
@@ -14,7 +14,7 @@ Defender for IoT uses a distributed architecture with network sensors deployed a
 
 **Sensor capabilities**: OT sensors perform deep packet inspection across 100+ industrial protocols including Modbus, OPC-UA, BACnet, DNP3, and proprietary SCADA protocols. The sensors use machine learning to establish behavioral baselines and detect anomalies without requiring signatures for every threat variant.
 
-**Agentless monitoring**: Evaluate whether agentless monitoring addresses your security requirements. Defender for IoT monitors traffic passively—it requires no agents on endpoints, no changes to device configurations, and no impact on production systems. This approach is essential for environments with legacy programmable logic controllers (PLCs), remote terminal units (RTUs), and embedded controllers that cannot support endpoint agents.
+**Agentless monitoring**: Evaluate whether agentless monitoring addresses your security requirements. Defender for IoT monitors traffic passively—it requires no agents on endpoints, no changes to device configurations, and no impact on production systems. This approach is essential for environments with legacy programmable logic controllers (PLCs), remote terminal units (RTUs), and embedded controllers that can't support endpoint agents.
 
 ## Assess deployment model options
 
@@ -150,6 +150,6 @@ When evaluating Defender for IoT for your organization, consider:
 
 **Change management**: Plan for initial learning mode where sensors establish baselines. Alert tuning reduces false positives after deployment.
 
-**Operational impact**: Validate that passive monitoring does not introduce latency or affect deterministic behavior of control systems.
+**Operational impact**: Validate that passive monitoring doesn't introduce latency or affect deterministic behavior of control systems.
 
 **Licensing**: Defender for IoT licenses based on committed devices. Plan capacity based on expected device count across all sites.
