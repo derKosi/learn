@@ -117,7 +117,7 @@ When the application uses the session token from the write operation, the subseq
 
 ## Understand consistency and RU consumption
 
-Consistency level directly affects RU consumption for read operations. Strong and bounded staleness consistency require reading from two replicas (minority quorum) to ensure consistency guarantees. Session, consistent prefix, and eventual consistency read from a single replica.
+Consistency level directly affects RU consumption for read operations. Strong and bounded staleness consistency requires reading from two replicas (minority quorum) to ensure consistency guarantees. Session, consistent prefix, and eventual consistency read from a single replica.
 
 | Consistency level | Replicas read | Relative RU cost |
 |-------------------|---------------|------------------|
