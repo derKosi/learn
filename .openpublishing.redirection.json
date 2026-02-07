@@ -116,6 +116,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "learn-pr/device-partner-university/introduction-to-entra-id/9-entra-id-autopilot.yml",
+      "redirect_url": "/training/modules/introduction-to-entra-id/9-tenant-id",
+      "redirect_document_id": false
+    },
+    {
       "source_path_from_root": "/learn-pr/azure/gain-insights-data-kusto-query-language/10-knowledge-check.yml",
        "redirect_url": "https://learn.microsoft.com/azure/?product=popular",
       "redirect_document_id": false
