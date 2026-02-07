@@ -4,10 +4,10 @@ title: Design solutions for traffic filtering with network security groups
 metadata:
   title: Design solutions for traffic filtering with network security groups
   description: "SC-100 preparatory module on: design solutions for traffic filtering with network security groups."
-  ms.date: 09/26/2024
+  ms.date: 02/07/2026
   author: ceperezb
   ms.author: ceperezb
   ms.topic: unit
-durationInMinutes: 10
+durationInMinutes: 11
 content: |
   [!include[](includes/3-design-solutions-traffic-filtering-network-security-groups.md)]
