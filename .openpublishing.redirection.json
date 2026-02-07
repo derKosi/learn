@@ -117,7 +117,7 @@
     },
     {
       "source_path": "learn-pr/device-partner-university/introduction-to-entra-id/9-entra-id-autopilot.yml",
-      "redirect_url": "learn-pr/device-partner-university/introduction-to-entra-id/9-tenant-id.yml",
+      "redirect_url": "/training/modules/introduction-to-entra-id/9-tenant-id",
       "redirect_document_id": false
     },
     {
