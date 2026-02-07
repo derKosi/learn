@@ -28,8 +28,13 @@ Use the following resources to explore endpoint security topics in greater depth
 
 ### IoT and operational technology
 
+- [Secure your IoT solutions](/azure/iot/iot-overview-security)
+- [Architecture best practices for Azure IoT Hub - Security](/azure/well-architected/service-guides/azure-iot-hub#security)
 - [Microsoft Defender for IoT - Overview](/azure/defender-for-iot/organizations/overview)
-- [Security in your IoT workload - Azure Well-Architected Framework](/azure/architecture/framework/iot/iot-security)
+- [Securing IoT devices in the enterprise](/azure/defender-for-iot/organizations/concept-enterprise)
+- [Security practices for Azure IoT device manufacturers](/azure/iot-dps/concepts-device-oem-security-practices)
+- [Security standards for Azure IoT Edge](/azure/iot-edge/security)
+- [Device Update for IoT Hub](/azure/iot-hub-device-update/)
 
 ### Secure remote access
 

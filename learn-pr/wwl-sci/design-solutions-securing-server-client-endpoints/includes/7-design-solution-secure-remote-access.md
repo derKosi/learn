@@ -11,7 +11,7 @@ The choice of which remote access solution is most appropriate depends on factor
 
 ## Design considerations
 
-- When available, you can use existing hybrid connectivity to Azure virtual networks via ExpressRoute or S2S/P2S VPN connections to provide remote access from on-premises to Windows and Linux Azure VMs.
+- When available, you can use existing hybrid connectivity to Azure virtual networks via ExpressRoute or site-to-site (S2S)/point-to-site (P2S) VPN connections to provide remote access from on-premises to Windows and Linux Azure VMs.
 - NSGs can be used to secure SSH/RDP connections to Azure VMs.
 - JIT allows remote SSH/RDP access over the internet without having to deploy any other infrastructure.
 - There are some [availability limitations](/azure/defender-for-cloud/just-in-time-access-usage) with JIT access.
@@ -47,15 +47,15 @@ The choice of which remote access solution is most appropriate depends on factor
 - Remote access to Windows and Linux VMs via public IPs directly attached to the VMs isn't recommended. Remote access should never be deployed without strict NSG rules and firewalling.
 - When using JIT access, be aware that it requires Microsoft Defender for Servers Plan 2 and can't be used for VMs protected by Azure firewalls controlled by Azure Firewall Manager.
 
-![Diagram that shows Azure virtual WAN topology.](../media/azure-virtual-wan-topology-bastion.png)
+:::image type="content" source="../media/azure-virtual-wan-topology-bastion.png" alt-text="Diagram that shows Azure virtual WAN topology." lightbox="../media/azure-virtual-wan-topology-bastion.png":::
 
 _Figure 1: Azure Virtual WAN topology._
 
-![Diagram that shows Azure hub-and-spoke topology.](../media/azure-hub-spoke-bastion.png)
+:::image type="content" source="../media/azure-hub-spoke-bastion.png" alt-text="Diagram that shows Azure hub-and-spoke topology." lightbox="../media/azure-hub-spoke-bastion.png":::
 
 _Figure 2: Azure hub-and-spoke topology._
 
-![Diagram that shows Azure standalone virtual network topology.](../media/azure-standalone-bastion.png)
+:::image type="content" source="../media/azure-standalone-bastion.png" alt-text="Diagram that shows Azure standalone virtual network topology." lightbox="../media/azure-standalone-bastion.png":::
 
 _Figure 3: Azure standalone virtual network topology._
 

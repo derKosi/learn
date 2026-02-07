@@ -23,7 +23,7 @@ Evaluate which Windows LAPS scenario matches your environment:
 
 Your choice of backup directory affects security model, management tools, and access control.
 
-**Microsoft Entra ID backup**:
+**Microsoft Entra ID backup**
 
 - Passwords are stored on the Microsoft Entra device object with additional encryption
 - Access control uses Microsoft Entra RBAC with built-in roles (Global Administrator, Cloud Device Administrator, Intune Administrator)
@@ -31,7 +31,7 @@ Your choice of backup directory affects security model, management tools, and ac
 - Conditional Access policies can protect password recovery operations
 - Audit logs track password updates and recovery events through Microsoft Entra
 
-**Windows Server Active Directory backup**:
+**Windows Server Active Directory backup**
 
 - Passwords are stored in attributes on computer objects
 - Access control uses ACLs on computer objects and organizational units
@@ -43,19 +43,19 @@ Your choice of backup directory affects security model, management tools, and ac
 
 When evaluating Windows LAPS, consider these configurable policy settings:
 
-**Password settings**:
+**Password settings**
 
 - Password length (8-64 characters) and complexity requirements
 - Passphrase support with configurable word count (new in Windows 11 24H2)
 - Improved readability option that excludes easily confused characters
 
-**Account management**:
+**Account management**
 
 - Manage the built-in administrator account (identified by RID, not name)
 - Specify a custom local administrator account name
 - Automatic account creation (new feature for managed local accounts)
 
-**Rotation settings**:
+**Rotation settings**
 
 - Password age (how long before automatic rotation)
 - Post-authentication actions (what happens after the managed password is used)
@@ -84,20 +84,20 @@ The legacy Microsoft LAPS product is deprecated as of Windows 11 23H2. Installat
 
 Evaluate which management approach fits your operational model:
 
-**Microsoft Intune**:
+**Microsoft Intune**
 
 - Endpoint security policies for account protection
 - Centralized management for Entra joined and hybrid joined devices
 - Password rotation through device actions in Intune admin center
 - View managed account details directly in Intune
 
-**Group Policy**:
+**Group Policy**
 
 - Traditional management for AD-joined devices
 - Windows LAPS administrative templates included in Windows
 - Familiar deployment and targeting mechanisms
 
-**PowerShell**:
+**PowerShell**
 
 - `Get-LapsADPassword` to retrieve passwords from AD
 - `Reset-LapsPassword` to force immediate rotation
@@ -107,25 +107,25 @@ Evaluate which management approach fits your operational model:
 
 When evaluating Windows LAPS for your organization, assess these factors:
 
-**Device coverage**:
+**Device coverage**
 
 - What percentage of devices are Entra joined vs. AD-joined?
 - Are there devices on older OS versions that require legacy LAPS?
 - Do you need to manage DSRM passwords on domain controllers?
 
-**Access control requirements**:
+**Access control requirements**
 
 - Who needs ability to retrieve local admin passwords?
 - Do you need Conditional Access protection for password recovery?
 - Are administrative units required for delegated management?
 
-**Compliance and audit**:
+**Compliance and audit**
 
 - What audit logging is required for password access?
 - Do regulatory requirements mandate password encryption?
 - How long must password history be retained?
 
-**Operational integration**:
+**Operational integration**
 
 - Is Intune available for policy deployment?
 - Are Group Policy management processes established?

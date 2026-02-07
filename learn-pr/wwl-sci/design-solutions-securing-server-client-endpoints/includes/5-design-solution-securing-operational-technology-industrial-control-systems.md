@@ -4,7 +4,7 @@ Security architects evaluating solutions for operational technology (OT) and ind
 
 Defender for IoT uses a distributed architecture with network sensors deployed at strategic points to monitor traffic. Understanding this architecture helps you evaluate whether the solution meets your organization's requirements.
 
-**Core components**:
+**Core components**
 
 | Component | Function | Deployment location |
 | --- | --- | --- |
@@ -12,15 +12,21 @@ Defender for IoT uses a distributed architecture with network sensors deployed a
 | Azure portal | Centralized management, cross-site visibility, integration with Azure services | Cloud |
 | Device inventory | Comprehensive asset discovery across IT, IoT, and OT devices | Both sensor and portal |
 
-**Sensor capabilities**: OT sensors perform deep packet inspection across 100+ industrial protocols including Modbus, OPC-UA, BACnet, DNP3, and proprietary SCADA protocols. The sensors use machine learning to establish behavioral baselines and detect anomalies without requiring signatures for every threat variant.
+**Sensor capabilities**
 
-**Agentless monitoring**: Evaluate whether agentless monitoring addresses your security requirements. Defender for IoT monitors traffic passively—it requires no agents on endpoints, no changes to device configurations, and no impact on production systems. This approach is essential for environments with legacy programmable logic controllers (PLCs), remote terminal units (RTUs), and embedded controllers that can't support endpoint agents.
+OT sensors perform deep packet inspection across 100+ industrial protocols including Modbus, OPC-UA, BACnet, DNP3, and proprietary SCADA protocols. The sensors use machine learning to establish behavioral baselines and detect anomalies without requiring signatures for every threat variant.
+
+**Agentless monitoring**
+
+Evaluate whether agentless monitoring addresses your security requirements. Defender for IoT monitors traffic passively—it requires no agents on endpoints, no changes to device configurations, and no impact on production systems. This approach is essential for environments with legacy programmable logic controllers (PLCs), remote terminal units (RTUs), and embedded controllers that can't support endpoint agents.
 
 ## Assess deployment model options
 
 Your deployment architecture depends on connectivity requirements, compliance constraints, and operational needs.
 
-**Cloud-connected deployment**: Sensors connect directly to Azure for centralized management and integration with Microsoft security services.
+**Cloud-connected deployment**
+
+Sensors connect directly to Azure for centralized management and integration with Microsoft security services.
 
 Benefits to evaluate:
 
@@ -34,7 +40,9 @@ Requirements:
 - Network connectivity from sensors to Azure endpoints
 - Azure subscription with Defender for IoT plan
 
-**Air-gapped deployment**: For environments requiring complete isolation from external networks, sensors operate fully on-premises.
+**Air-gapped deployment**
+
+For environments requiring complete isolation from external networks, sensors operate fully on-premises.
 
 Benefits to evaluate:
 
@@ -48,7 +56,9 @@ Requirements:
 - Local management and monitoring infrastructure
 - Integration with on-premises SIEM through syslog or API
 
-**Hybrid deployment**: Some sensors connect to Azure while others remain locally managed—appropriate for organizations with mixed connectivity requirements.
+**Hybrid deployment**
+
+Some sensors connect to Azure while others remain locally managed—appropriate for organizations with mixed connectivity requirements.
 
 When evaluating deployment models, consider that the legacy on-premises management console is no longer supported. Current architecture guidance recommends integrating air-gapped sensors directly with existing IT infrastructure through APIs and syslog forwarding.
 
@@ -56,7 +66,9 @@ When evaluating deployment models, consider that the legacy on-premises manageme
 
 Defender for IoT provides value when integrated into your organization's security operations workflow. Evaluate integration capabilities based on your SOC tooling.
 
-**Microsoft Sentinel integration**: The Defender for IoT data connector streams alerts to Microsoft Sentinel, enabling:
+**Microsoft Sentinel integration**
+
+The Defender for IoT data connector streams alerts to Microsoft Sentinel, enabling:
 
 - Unified incident queue across IT and OT environments
 - OT-specific analytics rules and workbooks
@@ -64,13 +76,17 @@ Defender for IoT provides value when integrated into your organization's securit
 - Correlation with IT security events for comprehensive threat detection
 - MITRE ATT&CK for ICS technique mapping
 
-**Microsoft Defender XDR integration**: Enterprise IoT capabilities extend visibility to enterprise IoT devices (printers, smart TVs, conferencing systems) through Defender for Endpoint integration. This provides:
+**Microsoft Defender XDR integration**
+
+Enterprise IoT capabilities extend visibility to enterprise IoT devices (printers, smart TVs, conferencing systems) through Defender for Endpoint integration. This provides:
 
 - Shared device inventory across Defender for IoT and Defender XDR
 - Unified alerts and recommendations
 - Cross-domain attack correlation
 
-**Third-party SIEM integration**: For organizations using other SIEM platforms, evaluate:
+**Third-party SIEM integration**
+
+For organizations using other SIEM platforms, evaluate:
 
 - Syslog forwarding for real-time alert streaming
 - API access for device inventory and vulnerability data
@@ -80,21 +96,27 @@ Defender for IoT provides value when integrated into your organization's securit
 
 Evaluate whether the detection capabilities address your specific threat landscape.
 
-**Asset discovery**: Continuous passive monitoring identifies all networked devices, including:
+**Asset discovery**
+
+Continuous passive monitoring identifies all networked devices, including:
 
 - PLCs, RTUs, HMIs, and engineering workstations
 - Network infrastructure (switches, routers, firewalls)
 - Device attributes (vendor, firmware version, protocols used)
 - Communication patterns between devices
 
-**Vulnerability assessment**: Risk-based prioritization helps focus remediation efforts on:
+**Vulnerability assessment**
+
+Risk-based prioritization helps focus remediation efforts on:
 
 - Unpatched firmware and known CVEs
 - Insecure protocols (Telnet, FTP, clear-text communications)
 - Unauthorized network connections
 - Configuration changes to controllers
 
-**Threat detection**: Evaluate detection coverage for your threat scenarios:
+**Threat detection**
+
+Evaluate detection coverage for your threat scenarios:
 
 - Unauthorized PLC code changes
 - Reconnaissance and scanning activity
@@ -102,21 +124,29 @@ Evaluate whether the detection capabilities address your specific threat landsca
 - Malware indicators and command-and-control communications
 - Policy violations (unauthorized connections, protocol misuse)
 
-**Protocol support**: Verify coverage for your specific industrial protocols. Defender for IoT supports major protocols natively. For proprietary protocols, evaluate the Horizon Open Development Environment (ODE) SDK for custom dissector development.
+**Protocol support**
+
+Verify coverage for your specific industrial protocols. Defender for IoT supports major protocols natively. For proprietary protocols, evaluate the Horizon Open Development Environment (ODE) SDK for custom dissector development.
 
 ## Plan sites and zones
 
 Effective deployment requires mapping your OT architecture into logical segments.
 
-**Sites**: Represent physical locations (facilities, plants, buildings). Each site can have multiple sensors for coverage across network segments.
+**Sites**
 
-**Zones**: Represent functional areas within a site (production lines, utility systems, safety systems). Zones enable:
+Represent physical locations (facilities, plants, buildings). Each site can have multiple sensors for coverage across network segments.
+
+**Zones**
+
+Represent functional areas within a site (production lines, utility systems, safety systems). Zones enable:
 
 - Granular access control based on user responsibilities
 - Logical grouping for alerts and reporting
 - Traffic monitoring across zone boundaries
 
-**Sensor placement**: Position sensors to capture east-west traffic within zones and north-south traffic between zones. Common placement points include:
+**Sensor placement**
+
+Position sensors to capture east-west traffic within zones and north-south traffic between zones. Common placement points include:
 
 - Core switches in the control network
 - Network boundaries between IT and OT (demilitarized zone)
@@ -126,14 +156,14 @@ Effective deployment requires mapping your OT architecture into logical segments
 
 Defender for IoT assists with compliance requirements common in industrial environments.
 
-**Supported frameworks**:
+**Supported frameworks**
 
 - IEC 62443 for industrial automation security
 - NERC CIP for energy sector critical infrastructure
 - NIST Cybersecurity Framework
 - Industry-specific regulations (FDA for pharmaceuticals, TSA for pipelines)
 
-**Compliance capabilities**:
+**Compliance capabilities**
 
 - Asset inventory for regulatory reporting
 - Vulnerability tracking and risk scoring
@@ -144,12 +174,22 @@ Defender for IoT assists with compliance requirements common in industrial envir
 
 When evaluating Defender for IoT for your organization, consider:
 
-**Sensor sizing**: Match sensor hardware or VM specifications to monitored bandwidth. Under-provisioned sensors may drop packets during traffic spikes.
+**Sensor sizing**
 
-**Network architecture**: Ensure traffic mirroring infrastructure (SPAN ports, network TAPs) can capture all relevant traffic without impacting production.
+Match sensor hardware or VM specifications to monitored bandwidth. Under-provisioned sensors may drop packets during traffic spikes.
 
-**Change management**: Plan for initial learning mode where sensors establish baselines. Alert tuning reduces false positives after deployment.
+**Network architecture**
 
-**Operational impact**: Validate that passive monitoring doesn't introduce latency or affect deterministic behavior of control systems.
+Ensure traffic mirroring infrastructure (SPAN ports, network TAPs) can capture all relevant traffic without impacting production.
 
-**Licensing**: Defender for IoT licenses based on committed devices. Plan capacity based on expected device count across all sites.
+**Change management**
+
+Plan for initial learning mode where sensors establish baselines. Alert tuning reduces false positives after deployment.
+
+**Operational impact**
+
+Validate that passive monitoring doesn't introduce latency or affect deterministic behavior of control systems.
+
+**Licensing**
+
+Defender for IoT licenses based on committed devices. Plan capacity based on expected device count across all sites.

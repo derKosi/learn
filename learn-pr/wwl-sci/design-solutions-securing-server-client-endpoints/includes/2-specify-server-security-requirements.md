@@ -4,7 +4,7 @@ As a security architect, you specify the security requirements that guide how yo
 
 When specifying server security requirements, organize them into categories that map to common security frameworks and regulatory standards. This approach ensures comprehensive coverage and simplifies compliance reporting.
 
-**Core requirement categories**:
+**Core requirement categories**
 
 - **Identity and access management**: Authentication methods, privileged access controls, service account management
 - **Network security**: Traffic filtering, segmentation, exposure reduction
@@ -87,17 +87,25 @@ On-premises servers require additional considerations:
 
 Beyond baseline security, specify requirements for active threat protection:
 
-**Endpoint detection and response (EDR)**: Require Microsoft Defender for Endpoint on all servers. Specify that alerts above a defined severity level must be investigated within a specific timeframe.
+**Endpoint detection and response (EDR)**
 
-**Vulnerability scanning**: Specify scanning frequency and remediation timelines:
+Require Microsoft Defender for Endpoint on all servers. Specify that alerts above a defined severity level must be investigated within a specific timeframe.
+
+**Vulnerability scanning**
+
+Specify scanning frequency and remediation timelines:
 
 - Critical vulnerabilities: Remediate within seven days
 - High vulnerabilities: Remediate within 30 days
 - Medium vulnerabilities: Remediate within 90 days
 
-**File integrity monitoring**: For servers processing sensitive data, require monitoring of critical system files and configuration files with alerts on unauthorized changes.
+**File integrity monitoring**
 
-**Security alerts**: Define requirements for alert routing, escalation procedures, and integration with your security operations center (SOC) or SIEM solution.
+For servers processing sensitive data, require monitoring of critical system files and configuration files with alerts on unauthorized changes.
+
+**Security alerts**
+
+Define requirements for alert routing, escalation procedures, and integration with your security operations center (SOC) or SIEM solution.
 
 ## Compliance and regulatory requirements
 
@@ -131,10 +139,10 @@ For most organizations, specify Plan 1 as the baseline requirement for all serve
 
 Your server security specification should include:
 
-1. **Scope definition**: Which servers are covered, organized by criticality tier
-2. **Requirement statements**: Clear, measurable requirements for each security category
-3. **Exception process**: How to request and document exceptions with compensating controls
-4. **Verification methods**: How compliance with each requirement will be assessed
-5. **Review cadence**: How often requirements are reviewed and updated (recommend annually or after significant changes)
+- **Scope definition**: Which servers are covered, organized by criticality tier
+- **Requirement statements**: Clear, measurable requirements for each security category
+- **Exception process**: How to request and document exceptions with compensating controls
+- **Verification methods**: How compliance with each requirement will be assessed
+- **Review cadence**: How often requirements are reviewed and updated (recommend annually or after significant changes)
 
 This structured approach ensures your server security requirements are comprehensive, actionable, and aligned with your organization's risk tolerance and regulatory obligations.

@@ -71,28 +71,28 @@ Windows client workstations require comprehensive hardening beyond endpoint prot
 
 Specify these baseline categories in your requirements:
 
-**Authentication and access control**:
+**Authentication and access control**
 
 - Require Windows Hello for Business or hardware security keys
 - Configure 14-character minimum password length
 - Set account lockout after failed attempts
 - Enable Credential Guard with UEFI lock
 
-**Attack surface reduction**:
+**Attack surface reduction**
 
 - Block executable content from email and webmail clients
 - Block untrusted and unsigned processes running from USB
 - Enable Virtualization Based Security with Secure Boot
 - Configure Windows Defender Application Control policies
 
-**Network protection**:
+**Network protection**
 
 - Block SMB v1
 - Require SMB signing for all communications
 - Disable multicast name resolution (LLMNR)
 - Block connection to non-domain networks when domain-connected
 
-**Endpoint protection**:
+**Endpoint protection**
 
 - Enable Microsoft Defender Antivirus real-time protection
 - Configure cloud-delivered protection with high blocking level
@@ -116,10 +116,18 @@ For mobile devices, require both device compliance (if enrolled) and app protect
 
 When specifying mobile and client security requirements, consider:
 
-**Enrollment strategy**: Determine which scenarios require full device enrollment versus app-only protection. Corporate devices typically need MDM for comprehensive control, while BYOD may only need MAM.
+**Enrollment strategy**
 
-**Platform coverage**: Ensure requirements address iOS, Android, Windows, and macOS clients. Each platform has different security capabilities and management tools.
+Determine which scenarios require full device enrollment versus app-only protection. Corporate devices typically need MDM for comprehensive control, while BYOD may only need MAM.
 
-**User experience**: Balance security requirements with productivity impact. Overly restrictive policies drive users toward shadow IT alternatives.
+**Platform coverage**
 
-**Compliance dependencies**: Some industries require specific data protection controls. Validate that your requirements meet regulatory obligations for data handling on mobile devices.
+Ensure requirements address iOS, Android, Windows, and macOS clients. Each platform has different security capabilities and management tools.
+
+**User experience**
+
+Balance security requirements with productivity impact. Overly restrictive policies drive users toward shadow IT alternatives.
+
+**Compliance dependencies**
+
+Some industries require specific data protection controls. Validate that your requirements meet regulatory obligations for data handling on mobile devices.

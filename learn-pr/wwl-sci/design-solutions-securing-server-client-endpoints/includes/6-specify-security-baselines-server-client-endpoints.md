@@ -14,7 +14,7 @@ Microsoft publishes baselines for Windows Server, Windows client, Microsoft 365 
 
 For Windows Server environments, specify baselines from the Security Compliance Toolkit (SCT). The SCT provides Group Policy Objects (GPOs) that you deploy through Active Directory or apply locally.
 
-**Current server baselines**:
+**Current server baselines**
 
 | Operating system | Baseline version | Use case |
 | --- | --- | --- |
@@ -33,7 +33,7 @@ When specifying server baseline requirements:
 
 For Windows 10 and Windows 11 devices managed through Intune, specify MDM security baselines. These baselines implement the same security configurations as the SCT baselines but use modern device management.
 
-**Current client baselines in Intune**:
+**Current client baselines in Intune**
 
 | Baseline type | Current version | Purpose |
 | --- | --- | --- |
@@ -52,20 +52,20 @@ Your specification should address:
 
 Default baseline settings work for most organizations, but you may need to customize certain settings. Your specification should define the customization process.
 
-**When customization is acceptable**:
+**When customization is acceptable**
 
 - A baseline setting conflicts with a required line-of-business application
 - The setting breaks a documented business function
 - A regulatory requirement mandates a different configuration
 
-**Customization process requirements**:
+**Customization process requirements**
 
 1. Document the specific setting being changed and the business justification
 2. Identify compensating controls that mitigate any reduced security
 3. Obtain approval from security leadership
 4. Review customizations annually or when baselines are updated
 
-**Settings that shouldn't be weakened**:
+**Settings that shouldn't be weakened**
 
 - Credential Guard and virtualization-based security (VBS)
 - BitLocker encryption requirements
@@ -77,14 +77,14 @@ Default baseline settings work for most organizations, but you may need to custo
 
 Specify how baseline compliance is monitored and what actions are taken for noncompliant devices.
 
-**For Intune-managed clients**:
+**For Intune-managed clients**
 
 - Require baseline compliance reports be reviewed weekly
 - Define thresholds for acceptable noncompliance (recommend less than 5% of devices)
 - Specify remediation timelines: configuration drift must be corrected within 72 hours
 - Integrate baseline compliance data into conditional access policies where appropriate
 
-**For server environments**:
+**For server environments**
 
 - Use the Policy Analyzer tool from SCT to compare current configurations against the baseline
 - Require quarterly baseline compliance assessments
@@ -103,11 +103,11 @@ Security baselines implement many of the specific settings referenced in other s
 
 Your security baseline specification should include:
 
-1. **Required baselines**: List each baseline by name and minimum version
-2. **Deployment scope**: Define which systems require each baseline
-3. **Customization register**: Track all approved deviations from baseline defaults
-4. **Compliance thresholds**: Define acceptable variance and remediation timelines
-5. **Update schedule**: Specify how quickly new baseline versions must be adopted
-6. **Exception process**: Document how to request and approve baseline exceptions
+- **Required baselines**: List each baseline by name and minimum version
+- **Deployment scope**: Define which systems require each baseline
+- **Customization register**: Track all approved deviations from baseline defaults
+- **Compliance thresholds**: Define acceptable variance and remediation timelines
+- **Update schedule**: Specify how quickly new baseline versions must be adopted
+- **Exception process**: Document how to request and approve baseline exceptions
 
 This structured approach ensures consistent security hardening across your endpoint environment while maintaining the flexibility to address legitimate business requirements.
