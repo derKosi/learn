@@ -33,105 +33,47 @@ Each MCSB v2 control also maps to industry frameworks such as CIS Controls v8.1,
 
 ## Evaluate segmentation and traffic control
 
-Effective network segmentation is a core security requirement and aligns to MCSB v2 control NS-1. When evaluating a network design, determine whether it isolates workloads appropriately and controls traffic flow between segments.
+Effective network segmentation aligns to MCSB v2 control NS-1. When evaluating a network design, determine whether it isolates workloads appropriately and controls traffic flow between segments. Key evaluation questions include:
 
-### Network segmentation layers
+- Does the design use **subscriptions, VNets, and subnets** to create layered isolation boundaries between environments and workloads?
+- Are **network security groups (NSGs)** applied to subnets with least-privilege rules, and are **application security groups (ASGs)** used to simplify rule management?
+- Does the network use a **hub-and-spoke topology** (or Azure Virtual WAN) with centralized security services in the hub and deny-by-default routing between spokes?
+- Are **Security Admin Rules** in Azure Virtual Network Manager enforcing organizational guardrails that workload teams can't override?
 
-Azure provides multiple segmentation options that create layers of isolation. Evaluate whether the design uses them effectively:
-
-- **Subscriptions** separate organizational units and provide platform-level isolation between environments such as production, development, and testing.
-- **Virtual networks (VNets)** provide network-level containment, with no traffic allowed between VNets by default — communication must be explicitly provisioned.
-- **Subnets** with **network security groups (NSGs)** create granular perimeters within a VNet. Evaluate whether NSG rules follow the principle of least privilege, with only required traffic allowed between subnets.
-- **Application security groups (ASGs)** simplify rule management by grouping VMs by application role, reducing rule complexity and the risk of misconfiguration.
-
-### Hub-and-spoke topology
-
-For most enterprise environments, evaluate whether the design uses a hub-and-spoke model. In this pattern, a central hub VNet hosts shared security services like Azure Firewall, and spoke VNets contain workloads. All traffic between spokes and to the internet routes through the hub. This design provides:
-
-- Centralized security policy enforcement
-- Consistent logging and monitoring at the hub
-- Reduced security posture management overhead as the network grows
-
-When the hub-and-spoke model is in place, verify that traffic between spokes is denied by default and only permitted paths are configured through the firewall.
+The next unit covers how to design these segmentation patterns in detail, including topology selection, Azure Virtual Network Manager, and microsegmentation within workloads.
 
 ## Evaluate defense-in-depth controls
 
-A strong network design applies defense-in-depth by layering multiple security controls. MCSB v2 controls NS-3 through NS-6 define the specific controls to evaluate at each layer.
+A strong network design applies defense-in-depth by layering multiple security controls. MCSB v2 controls NS-2 through NS-6 define the specific controls to evaluate. Assess whether the design includes:
 
-### Azure Firewall
-
-[Azure Firewall](/azure/firewall/overview) is a cloud-native, stateful firewall as a service. It provides centralized network and application rule enforcement across VNets and subscriptions. When evaluating, check whether the design:
-
-- Uses Azure Firewall as the central egress and east-west filtering point in a hub VNet
-- Leverages Azure Firewall Premium features such as TLS inspection and intrusion detection and prevention system (IDPS) for environments that require deep packet inspection
-- Integrates with Azure Firewall Manager to centrally manage policies across multiple firewalls
-
-### Azure Web Application Firewall
-
-For designs that include web-facing applications, evaluate whether [Azure Web Application Firewall (WAF)](/azure/web-application-firewall/overview) protects against Layer 7 attacks. WAF is available through Azure Application Gateway for regional workloads and through Azure Front Door for global workloads. Verify that the design uses managed rule sets aligned with OWASP top threats, rate limiting, and bot protection.
-
-### Azure DDoS Protection
-
-Evaluate whether the design enables Azure DDoS Protection on perimeter virtual networks that have internet-facing endpoints. Azure DDoS Protection automatically tunes to help protect your specific Azure resources and provides layer 3 and layer 4 mitigation. For web application protection at layer 7, WAF provides complementary defense.
-
-There are two tiers to consider:
-
-- **DDoS IP Protection** — Protects specific public IP addresses; suited for smaller or targeted deployments.
-- **DDoS Network Protection** — Covers entire virtual networks with advanced mitigation, analytics, and integration for larger enterprise environments.
-
-## Evaluate private connectivity and reduced exposure
-
-MCSB v2 controls NS-2 and NS-9 address private connectivity. A key evaluation criterion is whether the design minimizes the attack surface by reducing exposure to the public internet.
-
-### Azure Private Link and private endpoints
-
-Evaluate whether the design uses [Azure Private Link](/azure/private-link/private-link-overview) to access Azure PaaS services like Azure Storage and Azure SQL Database over private endpoints within the virtual network. This approach:
-
-- Removes public internet access to service resources
-- Keeps traffic on the Microsoft Azure backbone network
-- Protects against data exfiltration by mapping a private endpoint to a specific resource instance rather than the entire service
-
-For a security architect, the presence of private endpoints in a design is a strong indicator of least-exposure principles.
-
-### Azure Bastion for secure remote access
-
-Evaluate how the design handles administrative access to virtual machines. Designs that expose RDP or SSH ports directly to the internet present significant risk. Azure Bastion provides secure RDP/SSH connectivity through the Azure portal over TLS, without requiring public IP addresses on VMs. Check that the design uses Azure Bastion and combines it with just-in-time VM access in Microsoft Defender for Cloud to limit when ports are open.
-
-### Hybrid connectivity
-
-For hybrid environments, evaluate whether the design avoids sending sensitive traffic over the public internet. Azure ExpressRoute provides dedicated, private WAN connectivity between on-premises networks and Azure. Verify that the design uses ExpressRoute for sensitive or high-bandwidth workloads and that it terminates at the appropriate point relative to the perimeter firewall.
+- **[Azure Firewall](/azure/firewall/overview)** as the central egress and east-west filtering point, with Premium features (TLS inspection and IDPS) for environments that require deep packet inspection.
+- **[Azure Web Application Firewall (WAF)](/azure/web-application-firewall/overview)** on Application Gateway or Azure Front Door for Layer 7 protection against OWASP top threats on web-facing applications.
+- **[Azure DDoS Protection](/azure/ddos-protection/ddos-protection-overview)** on perimeter VNets with internet-facing endpoints. Choose DDoS IP Protection for targeted deployments or DDoS Network Protection for enterprise-wide coverage.
+- **[Azure Private Link](/azure/private-link/private-link-overview)** to access PaaS services through private endpoints, removing public internet exposure and keeping traffic on the Azure backbone.
+- **[Azure Bastion](/azure/bastion/bastion-overview)** for secure RDP/SSH access without exposing management ports, combined with just-in-time (JIT) VM access to limit when ports are open.
+- **Azure ExpressRoute** for hybrid connectivity that keeps sensitive traffic off the public internet.
 
 ## Evaluate identity-aware network security with Global Secure Access
 
-Microsoft's Security Service Edge (SSE) solution — comprising Microsoft Entra Internet Access and Microsoft Entra Private Access under the unified [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) platform — extends security controls beyond the traditional network perimeter with identity-centric network security.
-
-Global Secure Access integrates with Microsoft Entra Conditional Access to enforce policies based on user identity, device compliance, location, and risk level at the network layer. This approach aligns with Zero Trust by verifying explicitly at the point of access.
+Microsoft's Security Service Edge (SSE) solution — [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) — extends security controls beyond the traditional network perimeter by tying enforcement directly to identity. It comprises two components: Microsoft Entra Internet Access for outbound internet and Microsoft 365 traffic, and Microsoft Entra Private Access for Zero Trust Network Access to private resources.
 
 When evaluating a design that includes Global Secure Access, assess whether:
 
-- **Traffic forwarding profiles** are configured to route Microsoft 365 traffic, internet traffic, and private application traffic through the appropriate security controls
-- **Web content filtering** policies restrict access to risky or inappropriate web categories
-- **Conditional Access policies** are linked to security profiles to enforce identity-aware access decisions on network traffic
+- **Traffic forwarding profiles** route Microsoft 365 traffic, internet traffic, and private application traffic through the appropriate security controls.
+- **Web content filtering** policies restrict access to risky or inappropriate web categories.
+- **Conditional Access policies** are linked to security profiles to enforce identity-aware access decisions.
+- **The compliant network check** is required for Microsoft Entra-integrated applications to mitigate token theft.
+- **Private Access** replaces or complements VPN with identity-verified, per-application connectivity to on-premises resources.
+
+Later units in this module cover Internet Access and Private Access evaluation in detail.
 
 ## Evaluate network monitoring and posture management
 
-A network design is incomplete without continuous visibility and monitoring. MCSB v2 controls NS-7 and NS-8 emphasize centralized network security management and detecting insecure protocols. Evaluate whether the design includes:
+A network design is incomplete without continuous visibility. MCSB v2 controls NS-7 and NS-8 emphasize centralized network security management and detecting insecure protocols. Evaluate whether the design includes:
 
-- **Microsoft Defender for Cloud** networking recommendations and the interactive network map for visualizing topology, identifying unprotected resources, and surfacing risk-based recommendations.
-- **Azure Network Watcher** tools such as NSG flow logs, packet capture, and Traffic Analytics for real-time and historical analysis of traffic patterns.
-- **Centralized logging** that sends firewall, NSG flow, and DDoS diagnostic logs to Azure Monitor or Microsoft Sentinel.
+- **Microsoft Defender for Cloud** networking recommendations, attack path analysis, and adaptive network hardening for continuous posture assessment.
+- **VNet flow logs** and **Traffic Analytics** for traffic pattern analysis across the environment.
+- **Azure Firewall structured logs** with IDPS and threat intelligence logging enabled.
+- **Centralized SIEM integration** that sends network logs to Microsoft Sentinel for cross-source correlation and incident detection.
 
-Without monitoring, security gaps in the network design go undetected, reducing the effectiveness of the security controls in place.
-
-## Learn more
-
-- [Zero Trust security overview](/security/zero-trust/zero-trust-overview)
-- [Microsoft cloud security benchmark v2 — Network Security controls](/security/benchmark/azure/mcsb-v2-network-security)
-- [Azure network security best practices](/azure/security/fundamentals/network-best-practices)
-- [Azure Firewall Premium features](/azure/firewall/premium-features)
-- [Azure DDoS Protection overview](/azure/ddos-protection/ddos-protection-overview)
-- [Azure Web Application Firewall overview](/azure/web-application-firewall/overview)
-- [Azure Private Link overview](/azure/private-link/private-link-overview)
-- [Azure Bastion overview](/azure/bastion/bastion-overview)
-- [Global Secure Access overview](/entra/global-secure-access/overview-what-is-global-secure-access)
-- [Secure networks with Zero Trust](/security/zero-trust/deploy/networks)
+Later units in this module cover posture management and monitoring design in detail.

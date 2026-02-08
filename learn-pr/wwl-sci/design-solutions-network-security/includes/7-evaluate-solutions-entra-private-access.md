@@ -66,11 +66,3 @@ This per-application Conditional Access enforcement is a fundamental advantage o
 - **Apply Conditional Access per application** rather than relying on a single broad policy. This achieves true microsegmentation based on identity and device posture.
 - **Use report-only mode** when deploying new Conditional Access policies. Validate the policy impact through sign-in logs before enforcing.
 
-### Learn more
-
-- [Microsoft Entra Private Access concepts](/entra/global-secure-access/concept-private-access)
-- [Configure Quick Access](/entra/global-secure-access/how-to-configure-quick-access)
-- [Configure per-app access](/entra/global-secure-access/how-to-configure-per-app-access)
-- [Private network connectors](/entra/global-secure-access/concept-connectors)
-- [Kerberos SSO with Private Access](/entra/global-secure-access/how-to-configure-kerberos-sso)
-- [Conditional Access for Private Access apps](/entra/global-secure-access/how-to-target-resource-private-access-apps)

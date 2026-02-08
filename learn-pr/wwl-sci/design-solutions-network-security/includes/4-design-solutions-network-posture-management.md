@@ -74,11 +74,3 @@ Designing a posture management solution also requires governance mechanisms that
 
 **Azure Policy** provides the enforcement layer. Use built-in or custom policy definitions to deny the creation of resources that violate your network standards, such as subnets without NSGs, VNets without DDoS protection, or VMs with public IP addresses in production subscriptions. Combine policy with Defender for Cloud recommendations to create a closed loop of detection and prevention.
 
-## Learn more
-
-- [What is Microsoft Defender for Cloud?](/azure/defender-for-cloud/defender-for-cloud-introduction)
-- [Cloud security posture management (CSPM)](/azure/defender-for-cloud/concept-cloud-security-posture-management)
-- [Networking security recommendations reference](/azure/defender-for-cloud/recommendations-reference-networking)
-- [Identify and remediate attack paths](/azure/defender-for-cloud/how-to-manage-attack-path)
-- [Governance rules in Defender for Cloud](/azure/defender-for-cloud/governance-rules)
-- [Azure Policy built-in definitions for Azure networking](/azure/virtual-network/policy-reference)
