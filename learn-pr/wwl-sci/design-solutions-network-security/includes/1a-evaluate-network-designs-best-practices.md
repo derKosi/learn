@@ -6,9 +6,9 @@ Zero Trust is the foundational framework for evaluating modern network security 
 
 When you evaluate a network design, assess whether it enforces these three Zero Trust principles:
 
-- **Verify explicitly** — Does the design authenticate and authorize every access request based on all available signals, including user identity, device health, location, and workload context?
-- **Use least privilege access** — Does the design limit access to only necessary resources, using just-in-time and just-enough-access approaches?
-- **Assume breach** — Does the design minimize blast radius through segmentation and verify end-to-end encryption, with analytics for visibility and threat detection?
+- **Verify explicitly.** Does the design authenticate and authorize every access request based on all available signals, including user identity, device health, location, and workload context?
+- **Use least privilege access.** Does the design limit access to only necessary resources, using just-in-time and just-enough-access approaches?
+- **Assume breach.** Does the design minimize blast radius through segmentation and verify end-to-end encryption, with analytics for visibility and threat detection?
 
 A network design that relies solely on perimeter firewalls and VPN access doesn't align with these principles. Instead, look for designs that incorporate identity-aware controls, microsegmentation, and continuous verification at every network boundary.
 
@@ -55,7 +55,7 @@ A strong network design applies defense-in-depth by layering multiple security c
 
 ## Evaluate identity-aware network security with Global Secure Access
 
-Microsoft's Security Service Edge (SSE) solution — [Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access) — extends security controls beyond the traditional network perimeter by tying enforcement directly to identity. It comprises two components: Microsoft Entra Internet Access for outbound internet and Microsoft 365 traffic, and Microsoft Entra Private Access for Zero Trust Network Access to private resources.
+Microsoft's Security Service Edge (SSE) solution—[Global Secure Access](/entra/global-secure-access/overview-what-is-global-secure-access)—extends security controls beyond the traditional network perimeter by tying enforcement directly to identity. It comprises two components: Microsoft Entra Internet Access for outbound internet and Microsoft 365 traffic, and Microsoft Entra Private Access for Zero Trust Network Access to private resources.
 
 When evaluating a design that includes Global Secure Access, assess whether:
 

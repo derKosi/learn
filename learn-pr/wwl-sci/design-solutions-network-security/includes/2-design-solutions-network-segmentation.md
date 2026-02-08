@@ -20,9 +20,9 @@ Subscriptions provide the broadest isolation boundary. Resources in different su
 
 ### Virtual networks and subnets
 
-[Virtual networks (VNets)](/azure/virtual-network/virtual-networks-overview) provide network-level containment within a subscription. No traffic flows between VNets by default — you must explicitly enable communication through peering, VPN, or routing. This default isolation is a security advantage.
+[Virtual networks (VNets)](/azure/virtual-network/virtual-networks-overview) provide network-level containment within a subscription. No traffic flows between VNets by default—you must explicitly enable communication through peering, VPN, or routing. This default isolation is a security advantage.
 
-Within each VNet, subnets create internal boundaries. Use [network security groups (NSGs)](/azure/virtual-network/network-security-groups-overview) on subnets to filter traffic by port, protocol, and source or destination IP address. Design NSG rules following deny-by-default principles — allow only the traffic each workload requires and deny everything else.
+Within each VNet, subnets create internal boundaries. Use [network security groups (NSGs)](/azure/virtual-network/network-security-groups-overview) on subnets to filter traffic by port, protocol, and source or destination IP address. Design NSG rules following deny-by-default principles—allow only the traffic each workload requires and deny everything else.
 
 [Application security groups (ASGs)](/azure/virtual-network/application-security-groups) simplify NSG rules by grouping virtual machines by application role. Instead of managing rules based on individual IP addresses, you reference ASGs in your NSG rules. This approach reduces rule complexity and the risk of misconfiguration as your environment scales.
 
@@ -58,9 +58,9 @@ A central hub VNet hosts shared security services, and spoke VNets contain workl
 
 Deploy [Azure Firewall](/azure/firewall/overview) in the hub to enforce centralized network and application rules across all spokes. Define [user-defined routes (UDRs)](/azure/virtual-network/virtual-networks-udr-overview) on spoke subnets to direct traffic through the firewall. Key design benefits include:
 
-- **Deny by default between spokes** — Inter-spoke traffic is blocked unless explicitly allowed through firewall rules.
-- **Centralized logging** — Azure Firewall logs all accepted and denied traffic to Azure Monitor, providing a single view of traffic across the network.
-- **Asymmetric routing protection** — Even if someone accidentally creates a public endpoint in a spoke, the return packet is dropped by the stateful firewall, preventing unintended access.
+- **Deny by default between spokes.** Inter-spoke traffic is blocked unless explicitly allowed through firewall rules.
+- **Centralized logging.** Azure Firewall logs all accepted and denied traffic to Azure Monitor, providing a single view of traffic across the network.
+- **Asymmetric routing protection.** Even if someone accidentally creates a public endpoint in a spoke, the return packet is dropped by the stateful firewall, preventing unintended access.
 
 For organizations that need global transit connectivity and integrated security across multiple regions, [Azure Virtual WAN](/azure/virtual-wan/virtual-wan-about) provides a managed hub-and-spoke architecture with built-in routing, VPN, ExpressRoute, and Azure Firewall integration.
 
@@ -72,9 +72,9 @@ As your network grows, manually managing NSG rules and peering across dozens of 
 
 Security Admin Rules are a key capability of Azure Virtual Network Manager for segmentation design. These rules are evaluated **before** NSG rules, so they act as organizational guardrails that individual teams can't override. Design your Security Admin Rules to:
 
-- **Block high-risk ports globally** — Deny inbound traffic on ports like RDP (3389), SSH (22), and SMB (445) from the internet across all managed VNets. Teams that need exceptions can use Azure Bastion or just-in-time VM access.
-- **Enforce network segmentation** — Block traffic between VNets or subnets that shouldn't communicate, regardless of individual NSG configurations.
-- **Allow platform services** — Use *Always Allow* rules to ensure traffic from hub infrastructure services (such as Azure Firewall or Azure Bastion) can always reach spoke VNets, preventing NSG misconfigurations from breaking critical services.
+- **Block high-risk ports globally.** Deny inbound traffic on ports like RDP (3389), SSH (22), and SMB (445) from the internet across all managed VNets. Teams that need exceptions can use Azure Bastion or just-in-time VM access.
+- **Enforce network segmentation.** Block traffic between VNets or subnets that shouldn't communicate, regardless of individual NSG configurations.
+- **Allow platform services.** Use *Always Allow* rules to ensure traffic from hub infrastructure services (such as Azure Firewall or Azure Bastion) can always reach spoke VNets, preventing NSG misconfigurations from breaking critical services.
 
 Security Admin Rules support three actions: *Allow* (evaluated first, then NSG rules apply), *Deny* (traffic is dropped, NSG rules don't apply), and *Always Allow* (traffic is permitted, NSG rules are bypassed). This hierarchy lets your central security team set guardrails while application teams manage workload-specific NSG rules within those boundaries.
 
@@ -90,12 +90,12 @@ Segmentation boundaries are only effective when you inspect and filter the traff
 - **Application rules** filter by fully qualified domain name (FQDN) for HTTP/HTTPS and Azure SQL traffic, controlling which external destinations workloads can reach.
 - **Threat intelligence** blocks traffic to and from known malicious IP addresses and domains.
 
-Use [Azure Firewall Manager](/azure/firewall-manager/overview) to manage policies across multiple firewalls and regions through a parent-child policy hierarchy — a base policy sets organization-wide rules, and child policies add environment-specific overrides.
+Use [Azure Firewall Manager](/azure/firewall-manager/overview) to manage policies across multiple firewalls and regions through a parent-child policy hierarchy—a base policy sets organization-wide rules, and child policies add environment-specific overrides.
 
 ## Design microsegmentation within workloads
 
 Beyond VNet and subnet boundaries, design microsegmentation within individual workloads to limit lateral movement even inside a segment. Key approaches include:
 
-- **NSG rules between application tiers** — For a three-tier application, allow only the web tier to communicate with the application tier, and only the application tier to communicate with the database tier. Deny all other inter-tier traffic.
-- **Private endpoints** — Use [Azure Private Link](/azure/private-link/private-link-overview) to access PaaS services through private endpoints within the VNet, eliminating public internet exposure and mapping each endpoint to a specific resource instance to prevent data exfiltration to other accounts.
-- **Azure Bastion** — Replace direct RDP/SSH access with [Azure Bastion](/azure/bastion/bastion-overview), which provides secure remote access over TLS through the Azure portal without exposing management ports.
+- **NSG rules between application tiers.** For a three-tier application, allow only the web tier to communicate with the application tier, and only the application tier to communicate with the database tier. Deny all other inter-tier traffic.
+- **Private endpoints.** Use [Azure Private Link](/azure/private-link/private-link-overview) to access PaaS services through private endpoints within the VNet, eliminating public internet exposure and mapping each endpoint to a specific resource instance to prevent data exfiltration to other accounts.
+- **Azure Bastion.** Replace direct RDP/SSH access with [Azure Bastion](/azure/bastion/bastion-overview), which provides secure remote access over TLS through the Azure portal without exposing management ports.

@@ -2,7 +2,7 @@ Network security groups (NSGs) are the primary mechanism for filtering traffic b
 
 ## Understand how NSGs evaluate traffic
 
-Before designing NSG rules, you need to understand how Azure evaluates them. NSGs are stateful — if you allow inbound traffic on a port, the response traffic is automatically permitted without a separate outbound rule. Azure evaluates rules using a five-tuple match: source IP, source port, destination IP, destination port, and protocol. Rules are processed in priority order, where lower priority numbers are evaluated first (100 is evaluated before 200). Processing stops at the first matching rule.
+Before designing NSG rules, you need to understand how Azure evaluates them. NSGs are stateful—if you allow inbound traffic on a port, the response traffic is automatically permitted without a separate outbound rule. Azure evaluates rules using a five-tuple match: source IP, source port, destination IP, destination port, and protocol. Rules are processed in priority order, where lower priority numbers are evaluated first (100 is evaluated before 200). Processing stops at the first matching rule.
 
 This "first match wins" behavior is fundamental to your design. Place your most specific allow rules at lower priority numbers and broader deny rules at higher numbers. You can assign priorities between 100 and 4096, with Azure's default rules occupying 65000 and above.
 
@@ -10,9 +10,9 @@ This "first match wins" behavior is fundamental to your design. Place your most 
 
 You can associate an NSG with a subnet, a network interface (NIC), or both. The processing order depends on traffic direction:
 
-- **Inbound traffic** — Azure evaluates the subnet NSG first, then the NIC NSG. Traffic must be allowed by both to reach the virtual machine.
-- **Outbound traffic** — Azure evaluates the NIC NSG first, then the subnet NSG. Traffic must be allowed by both to leave the virtual network.
-- **Intra-subnet traffic** — The subnet NSG evaluates traffic between VMs in the same subnet. The default `AllowVNetInBound` rule permits this traffic, so you must add explicit deny rules if you need to block communication between VMs within a subnet.
+- **Inbound traffic.** Azure evaluates the subnet NSG first, then the NIC NSG. Traffic must be allowed by both to reach the virtual machine.
+- **Outbound traffic.** Azure evaluates the NIC NSG first, then the subnet NSG. Traffic must be allowed by both to leave the virtual network.
+- **Intra-subnet traffic.** The subnet NSG evaluates traffic between VMs in the same subnet. The default `AllowVNetInBound` rule permits this traffic, so you must add explicit deny rules if you need to block communication between VMs within a subnet.
 
 > [!TIP]
 > For optimal security configuration, associate your NSG with either the subnet or the network interface, but avoid both at the same time. When NSGs are applied at multiple levels, rules can conflict with each other, leading to unexpected traffic filtering that's difficult to troubleshoot.
@@ -47,11 +47,11 @@ The `DenyAllInBound` default blocks all inbound traffic not explicitly allowed, 
 
 Use service tags in place of specific IP addresses when designing rules that control traffic to or from Azure services. For example, instead of maintaining a list of Azure Storage IP addresses, use the `Storage` service tag. Key service tags for security-focused designs include:
 
-- **AzureActiveDirectory** — Traffic to Microsoft Entra ID for authentication
-- **AzureMonitor** — Traffic to Log Analytics, Application Insights, and Azure Monitor
-- **Sql** — Traffic to Azure SQL Database and Azure Synapse Analytics
-- **Storage** — Traffic to Azure Storage accounts
-- **AzureKeyVault** — Traffic to Azure Key Vault for secrets management
+- **AzureActiveDirectory.** Traffic to Microsoft Entra ID for authentication
+- **AzureMonitor.** Traffic to Log Analytics, Application Insights, and Azure Monitor
+- **Sql.** Traffic to Azure SQL Database and Azure Synapse Analytics
+- **Storage.** Traffic to Azure Storage accounts
+- **AzureKeyVault.** Traffic to Azure Key Vault for secrets management
 
 Service tags also support regional scoping. For example, `Storage.WestUS` narrows the allowed range to only Azure Storage IP addresses in the West US region. Use regional tags when your workloads access services in a specific region, reducing the allowed IP range to the minimum necessary.
 
@@ -59,7 +59,7 @@ Service tags also support regional scoping. For example, `Storage.WestUS` narrow
 
 [Application security groups (ASGs)](/azure/virtual-network/application-security-groups) let you group virtual machines by application role and use those groups as sources or destinations in NSG rules. This approach aligns your network security rules with your application architecture rather than managing individual IP addresses.
 
-Consider a three-tier application with web, logic, and database tiers. You create three ASGs — `AsgWeb`, `AsgLogic`, and `AsgDb` — and assign each VM's network interface to the appropriate group. Your NSG rules then reference these groups:
+Consider a three-tier application with web, logic, and database tiers. You create three ASGs—`AsgWeb`, `AsgLogic`, and `AsgDb`—and assign each VM's network interface to the appropriate group. Your NSG rules then reference these groups:
 
 | Priority | Source | Destination | Port | Action | Purpose |
 |---|---|---|---|---|---|
@@ -67,7 +67,7 @@ Consider a three-tier application with web, logic, and database tiers. You creat
 | 110 | AsgLogic | AsgDb | 1433 | Allow | Business logic to database |
 | 120 | Any | AsgDb | 1433 | Deny | Block all other database access |
 
-This design ensures that only the logic tier can reach the database tier, regardless of how many VMs you add to each group. When you scale out by adding new VMs, you assign them to the appropriate ASG — no rule changes are needed.
+This design ensures that only the logic tier can reach the database tier, regardless of how many VMs you add to each group. When you scale out by adding new VMs, you assign them to the appropriate ASG—no rule changes are needed.
 
 > [!IMPORTANT]
 > All network interfaces assigned to an application security group must exist in the same virtual network. You can't add network interfaces from different virtual networks to the same ASG.
@@ -80,13 +80,13 @@ There are [limits](/azure/azure-resource-manager/management/azure-subscription-s
 
 ## Integrate with Security Admin Rules
 
-As covered in the previous unit on network segmentation, Azure Virtual Network Manager [Security Admin Rules](/azure/virtual-network-manager/concept-security-admins) are evaluated **before** NSG rules. This evaluation order means your central security team can enforce organization-wide guardrails — like blocking inbound RDP (3389) or SSH (22) from the internet — that individual application teams can't override through their NSG configurations. Design your NSG rules with the understanding that Security Admin Rules act as the first layer of evaluation, and NSG rules provide workload-specific filtering within those guardrails.
+As covered in the previous unit on network segmentation, Azure Virtual Network Manager [Security Admin Rules](/azure/virtual-network-manager/concept-security-admins) are evaluated **before** NSG rules. This evaluation order means your central security team can enforce organization-wide guardrails—like blocking inbound RDP (3389) or SSH (22) from the internet—that individual application teams can't override through their NSG configurations. Design your NSG rules with the understanding that Security Admin Rules act as the first layer of evaluation, and NSG rules provide workload-specific filtering within those guardrails.
 
 ## Monitor traffic filtering decisions
 
 Designing NSG rules is only effective when you can verify and monitor how they filter traffic. Azure provides several tools for this purpose:
 
-- **Virtual network flow logs** — Record all IP traffic flowing through a virtual network, including which NSG or Security Admin Rule allowed or denied each flow. Virtual network flow logs replace the older NSG flow logs (retiring September 30, 2027) and provide broader coverage, including traffic through VPN gateways, ExpressRoute gateways, and Application Gateways.
-- **Traffic Analytics** — Processes flow log data to provide insights into traffic patterns, top talkers, security threats, and bandwidth consumption across your network.
-- **IP flow verify** — An Azure Network Watcher capability that tests whether a specific packet is allowed or denied to or from a VM, identifying which NSG rule is responsible. Use this tool to troubleshoot connectivity issues.
-- **Effective security rules** — Shows the aggregate of all NSG rules applied to a network interface, including default rules and rules from both subnet and NIC-level NSGs. Review effective rules to verify that your intended filtering is in place.
+- **Virtual network flow logs.** Record all IP traffic flowing through a virtual network, including which NSG or Security Admin Rule allowed or denied each flow. Virtual network flow logs replace the older NSG flow logs (retiring September 30, 2027) and provide broader coverage, including traffic through VPN gateways, ExpressRoute gateways, and Application Gateways.
+- **Traffic Analytics.** Processes flow log data to provide insights into traffic patterns, top talkers, security threats, and bandwidth consumption across your network.
+- **IP flow verify.** An Azure Network Watcher capability that tests whether a specific packet is allowed or denied to or from a VM, identifying which NSG rule is responsible. Use this tool to troubleshoot connectivity issues.
+- **Effective security rules.** Shows the aggregate of all NSG rules applied to a network interface, including default rules and rules from both subnet and NIC-level NSGs. Review effective rules to verify that your intended filtering is in place.

@@ -17,7 +17,7 @@ You learned how to:
 ### Network design and best practices
 
 - [Zero Trust security overview](/security/zero-trust/zero-trust-overview)
-- [Microsoft cloud security benchmark v2 — Network Security controls](/security/benchmark/azure/mcsb-v2-network-security)
+- [Microsoft cloud security benchmark v2—Network Security controls](/security/benchmark/azure/mcsb-v2-network-security)
 - [Azure network security best practices](/azure/security/fundamentals/network-best-practices)
 - [Azure Firewall Premium features](/azure/firewall/premium-features)
 - [Azure DDoS Protection overview](/azure/ddos-protection/ddos-protection-overview)
@@ -29,7 +29,7 @@ You learned how to:
 
 ### Network segmentation
 
-- [Azure Well-Architected Framework — Segmentation strategy](/azure/well-architected/security/segmentation)
+- [Azure Well-Architected Framework—Segmentation strategy](/azure/well-architected/security/segmentation)
 - [Azure Virtual Network Manager overview](/azure/virtual-network-manager/overview)
 - [Security admin rules in Azure Virtual Network Manager](/azure/virtual-network-manager/concept-security-admins)
 - [Azure Network Security Perimeter](/azure/private-link/network-security-perimeter-concepts)
