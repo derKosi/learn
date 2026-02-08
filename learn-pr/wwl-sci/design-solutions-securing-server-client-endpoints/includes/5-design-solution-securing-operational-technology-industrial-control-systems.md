@@ -90,7 +90,7 @@ For organizations using other SIEM platforms, evaluate:
 
 - Syslog forwarding for real-time alert streaming
 - API access for device inventory and vulnerability data
-- Event Hub integration through Azure for high-volume data export
+- Event hub integration through Azure for high-volume data export
 
 ## Assess threat detection capabilities
 

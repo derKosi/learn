@@ -36,7 +36,7 @@ Your choice of backup directory affects security model, management tools, and ac
 - Passwords are stored in attributes on computer objects
 - Access control uses ACLs on computer objects and organizational units
 - Optional password encryption requires Windows Server 2016 Domain Functional Level or later
-- Password history can be stored (not available with Entra ID)
+- Password history can be stored (not available with Microsoft Entra ID)
 - Recommended to enable password encryption when storing passwords in AD
 
 ## Policy configuration options
@@ -87,7 +87,7 @@ Evaluate which management approach fits your operational model:
 **Microsoft Intune**
 
 - Endpoint security policies for account protection
-- Centralized management for Entra joined and hybrid joined devices
+- Centralized management for Microsoft Entra joined and hybrid joined devices
 - Password rotation through device actions in Intune admin center
 - View managed account details directly in Intune
 
@@ -109,7 +109,7 @@ When evaluating Windows LAPS for your organization, assess these factors:
 
 **Device coverage**
 
-- What percentage of devices are Entra joined vs. AD-joined?
+- What percentage of devices are Microsoft Entra joined vs. AD-joined?
 - Are there devices on older OS versions that require legacy LAPS?
 - Do you need to manage DSRM passwords on domain controllers?
 
