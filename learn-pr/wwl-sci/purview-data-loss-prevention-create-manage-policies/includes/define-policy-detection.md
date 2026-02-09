@@ -36,7 +36,7 @@ For example, combining content-based detection with:
 
 Can significantly reduce unnecessary triggers.
 
-The goal isn't complexity for its own sake. It's clarity. Each condition should contribute meaningfully to the scenario you're trying to address.
+Detection should favor clarity over complexity. If adding conditions makes results harder to explain, refinement has likely gone too far.
 
 ## Balance coverage with precision
 
@@ -44,7 +44,7 @@ Broad detection increases coverage, but it also increases the chance of false po
 
 Early in policy creation, it's often better to favor clarity over completeness. A policy that triggers reliably in fewer scenarios is easier to validate and refine than one that fires constantly with mixed results.
 
-Detection can always be expanded later. Noise is harder to undo.
+Refinement stops helping when additional conditions reduce understanding more than they reduce noise. Detection can always be expanded later. Noise is harder to undo.
 
 ## Define what "good enough" detection looks like
 
@@ -56,7 +56,7 @@ Detection doesn't have to be perfect on day one. What matters is whether it reli
 - Results are understandable
 - False positives are limited and explainable
 
-This creates a strong foundation for validation and tuning.
+When detection consistently highlights the same types of activity considered risky, further refinement is unlikely to add value. This provides a strong foundation for validation and tuning.
 
 ## Account for how detection choices affect false positives
 
@@ -66,7 +66,7 @@ Being intentional about detection upfront reduces the need for heavy tuning afte
 
 ## Consider scenarios where data is reused or transformed
 
-Some scenarios are more complex than simple sharing or copying. When sensitive data is reused or transformed, detection becomes more important.
+Some scenarios are more complex than simple sharing or copying. When sensitive data is reused or transformed, detection plays a larger role in distinguishing real risk from incidental use.
 
 This includes workflows where:
 
@@ -74,6 +74,6 @@ This includes workflows where:
 - Data is combined with other inputs
 - Sensitive information appears in generated responses
 
-In these cases, detection quality matters more than aggressive enforcement. Clear, accurate detection helps ensure policies respond to real risk instead of incidental use.
+In these scenarios, adding contextual conditions is often more effective than tightening content patterns. Clear, accurate detection helps ensure policies respond to meaningful risk without over-enforcing acceptable use.
 
 With detection defined, scope becomes the deciding factor for whether those signals create insight or noise.
