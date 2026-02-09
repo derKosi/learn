@@ -33,6 +33,7 @@ You learned how to:
 - [Azure Virtual Network Manager overview](/azure/virtual-network-manager/overview)
 - [Security admin rules in Azure Virtual Network Manager](/azure/virtual-network-manager/concept-security-admins)
 - [Azure Network Security Perimeter](/azure/private-link/network-security-perimeter-concepts)
+- [Azure Virtual Network encryption](/azure/virtual-network/virtual-network-encryption-overview)
 - [Azure Firewall overview](/azure/firewall/overview)
 - [Azure Virtual WAN overview](/azure/virtual-wan/virtual-wan-about)
 
@@ -52,6 +53,7 @@ You learned how to:
 - [Networking security recommendations reference](/azure/defender-for-cloud/recommendations-reference-networking)
 - [Identify and remediate attack paths](/azure/defender-for-cloud/how-to-manage-attack-path)
 - [Governance rules in Defender for Cloud](/azure/defender-for-cloud/governance-rules)
+- [Network verifier in Azure Virtual Network Manager](/azure/virtual-network-manager/concept-virtual-network-verifier)
 - [Azure Policy built-in definitions for Azure networking](/azure/virtual-network/policy-reference)
 
 ### Network monitoring

@@ -54,9 +54,15 @@ Each attack path includes a risk level (High, Medium, or Low) determined by cont
 
 The **cloud security explorer** complements attack path analysis by letting you build custom queries across your cloud security graph. You can query for specific network conditions, such as "show all internet-facing VMs without endpoint protection, that have network access to databases containing sensitive data."
 
+## Verify reachability with network verifier
+
+Network verifier is a feature of Azure Virtual Network Manager that lets you check whether your network policies allow or block traffic between Azure network resources. You create a verifier workspace within your network manager instance, define reachability analysis intents that specify source, destination, ports, and protocol, and then run a static analysis. The analysis evaluates NSG rules, ASG rules, Security Admin Rules, virtual network peering, route tables, service endpoints, private endpoints, Virtual WAN configurations, and Azure Firewall rules (static Layer 4) to determine whether packets can reach the destination.
+
+Network verifier is useful during both the design and post-deployment phases of your network setup. When you encounter unexpected traffic allowances or blocks, the reachability analysis results reconstruct the source-to-destination path and show where the misconfiguration lies. Use this capability to validate segmentation intent, prove compliance with security requirements, and catch misconfigurations before or after they reach production.
+
 ## Validate posture with Network Watcher diagnostics
 
-Azure Network Watcher provides diagnostic tools that help you verify your network configurations match your intended design. While the next unit covers network monitoring in depth, two Network Watcher capabilities are especially relevant for posture validation:
+Azure Network Watcher provides diagnostic tools that help you verify your network configurations match your intended design. While the next unit covers network monitoring in depth, several Network Watcher capabilities are especially relevant for posture validation:
 
 - **IP flow verify** and **NSG diagnostics** check whether specific traffic is allowed or denied by evaluating the effective security rules at the VM or subnet level. Use these tools to confirm that your NSG configurations enforce the traffic-filtering policies you designed, without waiting for actual traffic to trigger a flow log entry.
 
