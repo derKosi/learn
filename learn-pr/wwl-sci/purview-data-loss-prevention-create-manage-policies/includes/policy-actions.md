@@ -33,6 +33,8 @@ Higher-risk scenarios might justify:
 
 For many scenarios, starting with nonenforcing actions and validating behavior through simulation helps confirm assumptions before stronger enforcement is applied.
 
+Warning actions are often more effective than blocking when the goal is behavior change rather than prevention. If users consistently adjust their behavior after seeing guidance, stronger enforcement may not be necessary.
+
 ## Use policy tips and notifications as guidance
 
 Policy tips and notifications play an important role in shaping behavior. They explain why an action is risky and what users can do instead.
@@ -57,7 +59,7 @@ Overrides are most effective when:
 - Justification is required and reviewed
 - Override patterns are used to refine detection and scope
 
-If most users override a policy, it's often a signal that the policy doesn't align with real workflows.
+If most users override a policy, it's often a signal that the policy doesn't align with real workflows. Isolated overrides, by contrast, are usually expected. Repeated overrides tied to the same workflow are a stronger signal that action choice needs adjustment.
 
 ## Pay attention to what override justifications reveal
 
@@ -68,6 +70,8 @@ Patterns in justifications can help answer questions like:
 - Are users encountering the policy during normal work?
 - Is the policy triggering in unexpected scenarios?
 - Does the action match the actual level of risk?
+
+Override justifications that repeat the same explanation often point to legitimate work being interrupted. Varied or unclear justifications are more likely to indicate detection or scope issues rather than action choice.
 
 Using this feedback helps improve policy quality over time.
 
