@@ -19,8 +19,8 @@ abstract: |
   - Compare ontology modeling's concept-driven approach with traditional use-case-driven data modeling
 prerequisites: |
   Before starting this module, you should have:
-  - Ability to navigate the Microsoft Fabric portal
-  - Conceptual understanding of data concepts such as tables, columns, and relationships
+  - The ability to navigate the Microsoft Fabric portal
+  - A conceptual understanding of data concepts such as tables, columns, and relationships
   - General familiarity with business intelligence and analytics scenarios
 iconUrl: /learn/achievements/generic-badge.svg
 levels:
