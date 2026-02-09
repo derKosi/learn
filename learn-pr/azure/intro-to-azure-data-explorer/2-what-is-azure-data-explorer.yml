@@ -6,8 +6,8 @@ metadata:
   title: Introduction to Azure Data Explorer
   description: Evaluate whether Azure Data Explorer is appropriate to process and analyze your big data.
   ms.date: 04/24/2025
-  author: spelluru
-  ms.author: spelluru
+  author: uribarash
+  ms.author: urib
   ms.topic: unit
 durationInMinutes: 5
 content: |
