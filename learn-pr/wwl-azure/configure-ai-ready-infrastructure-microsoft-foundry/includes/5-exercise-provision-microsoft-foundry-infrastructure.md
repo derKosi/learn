@@ -32,8 +32,7 @@ Your company is developing an enterprise AI platform using Microsoft Foundry to 
 ### Prerequisites
 - **Azure subscription**: If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 - **Permissions**: To create Azure AI Services resources, you should have the Owner role assigned at the Azure subscription.
-- **Familiarity with Microsoft Foundry resource types**: To learn more, refer to [Choose an Azure resource type for AI foundry](https://azure/ai-foundry/concepts/resource-types).
-
+- 
 [:::image type="content" source="../media/launch-exercise-button.png" alt-text="Button to launch exercise.":::](https://go.microsoft.com/fwlink/?linkid=2345105)
 
 ## Estimated time
@@ -58,8 +57,6 @@ Your company is developing an enterprise AI platform using Microsoft Foundry pro
 - **Azure subscription**: If you don't have an Azure subscription, [create a free account](https://azure.microsoft.com/free/) before you begin.
 - **Permissions**: To create Azure AI Services resources, you should have the Owner role assigned at the Azure subscription.
 - **Familiarity with Microsoft Foundry resource types**: To learn more, refer to [Choose an Azure resource type for AI foundry](https://azure/ai-foundry/concepts/resource-types).
-- **Familiarity with Azure Storage authorization**: To learn more, refer to [Prevent Shared Key authorization for an Azure Storage account](https://azure/storage/common/shared-key-authorization-prevent?tabs=portal).
-- **Familiarity with Azure Role-Based Access Control (RBAC)**: To learn more, refer to [Azure RBAC documentation](https://azure/role-based-access-control/).
 
 [:::image type="content" source="../media/launch-exercise-button.png" alt-text="Button to launch exercise.":::](https://go.microsoft.com/fwlink/?linkid=2344497)
 
