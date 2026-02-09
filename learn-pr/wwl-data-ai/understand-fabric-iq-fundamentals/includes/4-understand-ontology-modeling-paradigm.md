@@ -28,7 +28,7 @@ Traditional database columns often vary: "temp," "temperature," "temp_reading," 
 
 In ontology modeling, you define a standard property name like "Temperature" at the entity type level. When you bind to data, you map this property to whatever column name exists in your table - whether it's "temp," "temperature," or "body_temp." Tools querying the ontology always see the standardized "Temperature" property, regardless of the underlying column name.
 
-:::image type="content" source="../media/vitalsign-properties.png" alt-text="Screenshot of VitalSign entity type showing properties including HeartRate, OxygenSaturation, RespiratoryRate, and Timestamp in Fabric IQ ontology editor." border="false":::
+:::image type="content" source="../media/vital-sign-properties.png" alt-text="Screenshot of VitalSign entity type showing properties including HeartRate, OxygenSaturation, RespiratoryRate, and Timestamp in Fabric IQ ontology editor." border="false":::
 
 This VitalSign entity type shows standardized property names like HeartRate, OxygenSaturation, and RespiratoryRate. When bound to data, these properties map to the actual column names in the source table.
 
