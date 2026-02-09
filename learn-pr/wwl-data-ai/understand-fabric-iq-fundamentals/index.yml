@@ -10,7 +10,7 @@ metadata:
   ms.service: fabric
   ai-usage: ai-generated
 title: Understand Microsoft Fabric IQ fundamentals
-summary: Microsoft Fabric IQ provides a way to define business vocabulary in ontologies and bind them to data sources. Learn about ontology items, data agents, Graph in Microsoft Fabric, and Power BI semantic models, and discover how ontology modeling shifts from use-case-driven to concept-driven thinking.
+summary: Microsoft Fabric IQ provides a way to define business vocabulary in ontologies and bind them to data sources. Learn about ontology items, data agents, Graph in Microsoft Fabric, and Power BI semantic models. Discover how ontology modeling differs from traditional analytical modeling by starting with business concepts rather than specific use cases.
 abstract: |
   By the end of this module, you'll be able to:
   - Explain what Fabric IQ is and how ontologies define business vocabulary
@@ -18,10 +18,10 @@ abstract: |
   - Distinguish between the roles of each Fabric IQ component: ontology items, data agents, Graph in Microsoft Fabric, and Power BI semantic models
   - Compare ontology modeling's concept-driven approach with traditional use-case-driven data modeling
 prerequisites: |
-  The following prerequisites should be completed:
-  - Familiarity with basic data concepts like tables, columns, and relationships
-  - Understanding of business intelligence and analytics scenarios
-  - Basic knowledge of Microsoft Fabric workloads (lakehouse, warehouse, Power BI)
+  Before starting this module, you should have:
+  - Ability to navigate the Microsoft Fabric portal
+  - Conceptual understanding of data concepts such as tables, columns, and relationships
+  - General familiarity with business intelligence and analytics scenarios
 iconUrl: /learn/achievements/generic-badge.svg
 levels:
 - beginner

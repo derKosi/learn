@@ -1,5 +1,3 @@
-# Explore Microsoft Fabric IQ components
-
 Microsoft Fabric IQ brings together several components that work as an integrated ecosystem. Each component serves a specific role in how you define, query, analyze, and visualize your business data. Understanding these components helps you choose the right tool for each task and leverage their combined strengths.
 
 Fabric IQ includes four core components:
@@ -29,7 +27,7 @@ You enhance data agent accuracy by providing **data agent instructions** (guidan
 
 Data agents enforce read-only access and apply security protocols to ensure users only see data they have permission to access. You can publish data agents to Microsoft 365 Copilot or integrate them with Microsoft Copilot Studio to extend their reach beyond Fabric.
 
-![Screenshot showing the data agent chat interface with a question and answer.](../media/data-agent-interface.png)
+:::image type="content" source="../media/data-agent-interface.png" alt-text="Screenshot showing the data agent chat interface with a question and answer.":::
 
 ## Graph in Microsoft Fabric: Visualize and traverse relationships
 
@@ -43,7 +41,7 @@ Graph in Microsoft Fabric operates directly on OneLake without requiring data du
 
 Ontology and Graph in Microsoft Fabric work together seamlessly. The ontology declares your business concepts and relationships, then automatically creates a graph structure. Graph in Microsoft Fabric stores and computes the traversals, enabling visual exploration and advanced queries over your connected data.
 
-![Screenshot showing the graph interface for exploring relationships visually.](../media/graph-interface.png)
+:::image type="content" source="../media/graph-interface.png" alt-text="Screenshot showing the graph interface for exploring relationships visually.":::
 
 ## Semantic models: Generate ontologies from existing data models
 

@@ -1,5 +1,3 @@
-# Understand the ontology modeling paradigm
-
 Ontology modeling in Fabric IQ defines business concepts independent of specific analytical use cases. This unit explains how the ontology approach differs from traditional analytical data modeling.
 
 ## Recognize business concepts over table schemas
