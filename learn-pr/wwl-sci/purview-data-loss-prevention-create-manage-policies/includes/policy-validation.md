@@ -18,6 +18,8 @@ Simulation helps you:
 - Observe how scope affects real users and workflows
 - Evaluate whether selected actions are appropriate
 
+In practice, simulation results are easier to interpret when patterns repeat. Repeated matches tied to the same action or workflow often point to scoping constraints. Scattered, one-off matches across unrelated activity might suggest detection is too broad.
+
 While simulation doesn't enforce restrictions, users might still see policy tips or guidance. This allows organizations to observe not only how policies would trigger, but also how users respond to messaging before enforcement is enabled.
 
 Treating simulation as feedback encourages deliberate refinement before enforcement.
@@ -46,7 +48,11 @@ When reviewing results, look for:
 - Whether activity aligns with expected risk scenarios
 - Patterns that suggest legitimate work are being affected
 
+Repeated alerts tied to the same users or workflows often indicate scope issues. Alerts spread across unrelated activity usually point to detection that needs refinement. High override rates tend to indicate action mismatch rather than user disregard.
+
 The goal isn't zero activity. It's predictable, understandable activity.
+
+If results are surprising or difficult to explain, enforcement should wait. If an alert can't be clearly explained, users are unlikely to understand it once enforcement begins.
 
 ## Make targeted tuning adjustments
 
@@ -58,7 +64,7 @@ Common tuning changes include:
 - Refining detection conditions
 - Adjusting actions to better match observed risk
 
-These changes are easier to make before enforcement, when users aren't yet affected.
+Isolated events are rarely a strong signal. Tuning decisions are more reliable when patterns persist over time.
 
 ## Identify when a policy is ready for enforcement
 
@@ -69,7 +75,7 @@ A policy is typically ready for enforcement when:
 - Actions match the organization's risk tolerance
 - Users can understand why enforcement occurs
 
-Readiness is about confidence, not perfection. Policies can continue to evolve after enforcement begins.
+Readiness is about confidence, not perfection. Some noise is expected, as long as it's predictable and understood.
 
 ## Recognize validation as the start of the policy lifecycle
 
