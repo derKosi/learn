@@ -5,11 +5,11 @@ An ontology is a shared vocabulary of your business. It's made up of the things 
 You can also think of an ontology like a business context layer, containing:
 
 - A catalog of concepts (like Hospital, Patient, Department) with their properties and relationships
-- Data bindings that link those concepts to your actual data sources in OneLake
+- Data bindings to your lakehouse tables and eventhouse streams
 - A graphical representation that links related concepts for navigation and analysis
 - A query surface that lets you ask questions about concepts (not just tables), supporting federated queries across sources
 
-Instead of requiring data experts to translate business questions into SQL queries, you model data using business concepts that everyone understands. With Fabric IQ, you define entity types like Hospital, Patient, and Department once, then bind them to your actual data sources in OneLake.
+Instead of requiring data experts to translate business questions into SQL queries, you model data using business concepts that everyone understands.
 
 The ontology provides a single definition of each concept that can be used by data agents and Graph in Microsoft Fabric for querying and visualization.
 
@@ -19,7 +19,7 @@ Fabric IQ builds on Microsoft Fabric's unified data platform. Here's how it conn
 
 **Ingest and store:** Fabric IQ works with data you already have in lakehouse tables and eventhouse streams. It doesn't move or duplicate your data—it creates a semantic layer that references your existing data sources.
 
-**Model and represent semantics:** The ontology item offers modeling capabilities by defining entity types, properties, and relationship types. You can generate an ontology structure from existing Power BI semantic models, or create your own from scratch. Then bind ontology features to data sources and explore them in a navigable graph that builds automatically.
+**Model and represent semantics:** The ontology item offers modeling capabilities by defining entity types, properties, and relationship types. You can generate an ontology structure from existing Power BI semantic models, or create your own from scratch. Then bind these definitions to your data and explore them in a navigable graph that builds automatically.
 
 **Analyze and visualize:** The ontology item integrates with Graph in Microsoft Fabric to provide a visual graph and query experience based on your business concepts. You can use the ontology to ground data agents with business context.
 
@@ -44,7 +44,7 @@ The ontology opens when it's ready. You'll see two main areas: the configuration
 
 The ontology item has two primary views:
 
-**Configuration canvas:** This is where you build your ontology. You create entity types (like Hospital, Department, Room, Patient), define properties on those entities (like FirstName, DateOfBirth, AdmissionDate), and establish relationship types between entities (like "contains" or "assigned to"). You also bind these definitions to your actual data sources in OneLake.
+**Configuration canvas:** This is where you build your ontology. You create entity types (like Hospital, Department, Room, Patient), define properties on those entities (like FirstName, DateOfBirth, AdmissionDate), and establish relationship types between entities (like "contains" or "assigned to").
 
 :::image type="content" source="../media/configuration-canvas.png" alt-text="Screenshot showing the ontology configuration canvas with entity types, properties, and relationships." lightbox="../media/configuration-canvas.png":::
 
@@ -66,9 +66,7 @@ This workflow separates business meaning from physical data structures.
 
 ## How Fabric IQ connects to OneLake
 
-Fabric IQ doesn't move or duplicate your data. Instead, it creates a semantic layer that references your existing data sources.
-
-Your ontology definitions bind to existing data sources:
+Fabric IQ doesn't move or duplicate your data. Instead, it creates a semantic layer that references existing data sources:
 
 - **Lakehouse tables** contain static data (patient records, hospital information, room assignments)
 - **Eventhouse streams** contain time-series data (continuous vital signs from medical monitoring equipment)
@@ -81,6 +79,6 @@ Fabric IQ offers two approaches for creating ontologies:
 
 **Generate from Power BI semantic model:** If you already have a well-structured Power BI semantic model, you can automatically generate an initial ontology structure from it. Fabric IQ creates entity types matching your tables, properties matching your columns, and relationship types following your model relationships. You then refine this generated ontology by renaming entity types, verifying keys and bindings, and enhancing it with additional data sources like time-series eventhouse streams.
 
-**Build from OneLake data:** If you don't have a semantic model, or want full control over ontology design, you can build directly from lakehouse and eventhouse data sources. You manually create entity types, define properties, establish relationships, and bind them to data sources. This approach gives you complete control over how you model your business vocabulary.
+**Build from OneLake data:** If you don't have a semantic model, or want full control over ontology design, you can build directly from lakehouse and eventhouse data. You manually create entity types, define properties, and establish relationships. This approach gives you complete control over how you model your business vocabulary.
 
-Both paths lead to the same result: a complete ontology that defines your business concepts and binds them to data sources.
+Both paths lead to the same result: a complete ontology that defines your business concepts.
