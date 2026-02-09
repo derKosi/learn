@@ -6,7 +6,7 @@ In this unit, we look at how Azure Data Explorer works behind the scenes by disc
 
 This knowledge helps you decide if Azure Data Explorer is a good fit for your data needs.
 
-:::image type="content" source="../media/overview-architecture.png" alt-text="Image representing architecture of Azure Data Explorer and data connections in and out of the service.":::
+:::image type="content" source="../media/overview-architecture.png" alt-text="Diagram representing architecture of Azure Data Explorer and data connections in and out of the service.":::
 
 ## Major components
 
