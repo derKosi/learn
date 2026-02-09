@@ -1,14 +1,14 @@
 ### YamlMime:Module
 uid: learn.wwl.implement-resilient-ai-ready-infrastructure
 metadata:
-  title: "Implement resilient AI-Ready Infrastructure"
+  title: "Implement resilient AI-ready infrastructure"
   description: "This module explains building resilient, multi-region AI infrastructure using Microsoft Foundry hubs, geo-redundant storage, and Azure Container Registry geo-replication. It shows how coordinated replication and failover protect data, model images, and AI services during regional outages."
   ms.date: 02/03/2026
   author: wwlpublish
   ms.author: bradj
   ms.topic: module
   ms.service: azure
-title: "Implement resilient AI-Ready Infrastructure"
+title: "Implement resilient AI-ready infrastructure"
 summary: This module explains building resilient, multi-region AI infrastructure using Microsoft Foundry hubs, geo-redundant storage, and Azure Container Registry geo-replication. It shows how coordinated replication and failover protect data, model images, and AI services during regional outages.
 abstract: |
   By the end of this module, you're able to:
@@ -28,7 +28,7 @@ roles:
 products:
 - azure
 subjects:
-- azure
+- infrastructure
 units:
 - learn.wwl.implement-resilient-ai-ready-infrastructure.introduction
 - learn.wwl.implement-resilient-ai-ready-infrastructure.configure-microsoft-foundry-hubs-region
