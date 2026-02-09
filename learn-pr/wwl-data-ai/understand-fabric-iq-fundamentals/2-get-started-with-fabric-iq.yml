@@ -8,8 +8,7 @@ metadata:
   author: theresa-i
   ms.author: theresai
   ms.topic: unit
-  ms.service: fabric
-ai-usage: ai-generated
+  ai-usage: ai-generated
 durationInMinutes: 8
 content: |
   [!include[](includes/2-get-started-with-fabric-iq.md)]

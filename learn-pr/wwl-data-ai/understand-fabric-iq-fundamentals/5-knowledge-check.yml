@@ -10,7 +10,6 @@ metadata:
   author: theresa-i
   ms.author: theresai
   ms.topic: unit
-  ms.service: fabric
   ai-usage: ai-generated
 azureSandbox: false
 labModal: false
