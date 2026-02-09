@@ -1,17 +1,17 @@
 Effective network monitoring gives you continuous visibility into the traffic flowing through your cloud environment. For a security architect, designing a monitoring solution means capturing the right data, analyzing it for threats and anomalies, and integrating findings into your security operations workflow. This unit explores how to combine Azure monitoring tools to build a comprehensive network monitoring strategy.
 
-## Capture traffic data with VNet flow logs
+## Capture traffic data with virtual network flow logs
 
-Virtual network (VNet) flow logs are the foundation of network traffic monitoring in Azure. They record metadata about every IP flow entering and leaving a virtual network, including source and destination addresses, ports, protocol, traffic direction, and whether the flow was allowed or denied. Flow logs operate at Layer 4 and are collected at one-minute intervals without affecting your resources or network performance.
+Virtual network flow logs are the foundation of network traffic monitoring in Azure. They record metadata about every IP flow entering and leaving a virtual network, including source and destination addresses, ports, protocol, traffic direction, and whether the flow was allowed or denied. Flow logs operate at Layer 4 and are collected at one-minute intervals without affecting your resources or network performance.
 
-VNet flow logs offer several advantages over the older network security group (NSG) flow logs:
+Virtual network flow logs offer several advantages over the older network security group (NSG) flow logs:
 
-- **Broader scope.** You enable logging at the virtual-network level, which captures all traffic through supported workloads in that VNet. With NSG flow logs, you need to configure logging at both the subnet and network-interface level to get complete coverage.
-- **Additional signals.** VNet flow logs identify whether Azure Virtual Network Manager security admin rules allowed or denied traffic, not only NSG rules. They also report the encryption status of flows when you use virtual network encryption.
-- **Simplified management.** A single flow log per VNet replaces the need for multiple NSG flow logs, reducing configuration complexity and the risk of gaps.
+- **Broader scope.** You enable logging at the virtual-network level, which captures all traffic through supported workloads in that virtual network. With NSG flow logs, you need to configure logging at both the subnet and network-interface level to get complete coverage.
+- **Additional signals.** Virtual network flow logs identify whether Azure Virtual Network Manager security admin rules allowed or denied traffic, not only NSG rules. They also report the encryption status of flows when you use virtual network encryption.
+- **Simplified management.** A single flow log per virtual network replaces the need for multiple NSG flow logs, reducing configuration complexity and the risk of gaps.
 
 > [!IMPORTANT]
-> NSG flow logs will be retired on September 30, 2027. After June 30, 2025, you can no longer create new NSG flow logs. Migrate existing NSG flow logs to VNet flow logs and design all new deployments around VNet flow logs.
+> NSG flow logs will be retired on September 30, 2027. After June 30, 2025, you can no longer create new NSG flow logs. Migrate existing NSG flow logs to virtual flow logs and design all new deployments around virtual network flow logs.
 
 Flow log data is stored in Azure Storage and can be exported to a security information and event management (SIEM) solution, intrusion detection system (IDS), or visualization tool for further analysis.
 
@@ -20,9 +20,9 @@ Flow log data is stored in Azure Storage and can be exported to a security infor
 When you design your flow log strategy, consider the following factors:
 
 - **Storage account placement.** The storage account must be in the same region and subscription (or same Microsoft Entra tenant) as the virtual network. Only standard-tier storage accounts are supported.
-- **Coverage gaps.** Some Azure services don't support VNet flow logs, including Azure Container Instances, Azure Container Apps, Azure Functions, Logic Apps, and Azure App Service. For traffic to and from these services, plan alternative monitoring approaches.
+- **Coverage gaps.** Some Azure services don't support virtual network flow logs, including Azure Container Instances, Azure Container Apps, Azure Functions, Logic Apps, and Azure App Service. For traffic to and from these services, plan alternative monitoring approaches.
 - **Private endpoint traffic.** Traffic can't be recorded at the private endpoint itself. Capture this traffic at the source VM using the destination IP address of the private endpoint.
-- **Cost management.** VNet flow logs are charged per gigabyte collected, with a free tier of 5 GB per month per subscription. Enable flow logs selectively on VNets that carry sensitive or high-risk traffic to control costs.
+- **Cost management.** Virtual network flow logs are charged per gigabyte collected, with a free tier of 5 GB per month per subscription. Enable flow logs selectively on virtual networks that carry sensitive or high-risk traffic to control costs.
 
 ## Analyze traffic patterns with Traffic Analytics
 
@@ -37,7 +37,7 @@ Traffic Analytics answers key monitoring questions:
 - **Where are open internet ports?** Detect ports exposed to the internet across your environment.
 - **Are there anomalies?** Spot sudden spikes in traffic volume, unexpected communication between segments, or connections to known malicious IP addresses.
 
-To use Traffic Analytics, you need VNet flow logs (or NSG flow logs for existing deployments), a Network Watcher instance, and a Log Analytics workspace. Configure the processing interval at one minute or 10 minutes depending on how quickly you need insights relative to cost.
+To use Traffic Analytics, you need virtual network flow logs (or NSG flow logs for existing deployments), a Network Watcher instance, and a Log Analytics workspace. Configure the processing interval at one minute or 10 minutes depending on how quickly you need insights relative to cost.
 
 ## Monitor connectivity with Connection Monitor
 
@@ -79,7 +79,7 @@ Individual monitoring tools produce valuable data, but their full power emerges 
 
 Design your monitoring solution to send the following network data sources to Microsoft Sentinel:
 
-- VNet flow logs (through Traffic Analytics and the Log Analytics workspace)
+- Virtual network flow logs (through Traffic Analytics and the Log Analytics workspace)
 - Azure Firewall structured logs
 - Azure DDoS Protection logs
 - Azure Web Application Firewall (WAF) logs
@@ -89,7 +89,7 @@ Microsoft Sentinel applies analytics rules and machine-learning models to detect
 
 ## Design recommendations
 
-- Enable VNet flow logs on all virtual networks that carry production or sensitive workloads. Use Traffic Analytics with a one-minute processing interval for security-critical environments.
+- Enable virtual network flow logs on all virtual networks that carry production or sensitive workloads. Use Traffic Analytics with a one-minute processing interval for security-critical environments.
 - Deploy Connection Monitor tests for every critical application path, including hybrid and cross-region connections. Set alerts at thresholds that give your team time to respond before users are affected.
 - Configure Azure Firewall structured logs in resource-specific mode and enable IDPS and threat intelligence logging for all Azure Firewall instances.
 - Route all network monitoring data to a centralized Log Analytics workspace connected to Microsoft Sentinel.

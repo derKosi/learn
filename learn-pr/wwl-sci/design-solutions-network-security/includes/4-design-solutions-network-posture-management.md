@@ -28,7 +28,7 @@ Each recommendation includes a severity level, affected resources, and remediati
 
 ### Asset inventory for network resources
 
-The asset inventory in Defender for Cloud lets you query and filter across all connected network resources, including VNets, subnets, NSGs, load balancers, and public IP addresses across Azure, AWS, and GCP. You can filter by resource type, security state, and recommendation status to identify the resources that need attention. The inventory uses Azure Resource Graph for querying at scale, so you can also build custom queries with Kusto Query Language (KQL) for deeper analysis.
+The asset inventory in Defender for Cloud lets you query and filter across all connected network resources, including virtual networks, subnets, NSGs, load balancers, and public IP addresses across Azure, AWS, and GCP. You can filter by resource type, security state, and recommendation status to identify the resources that need attention. The inventory uses Azure Resource Graph for querying at scale, so you can also build custom queries with Kusto Query Language (KQL) for deeper analysis.
 
 ## Strengthen network defenses with adaptive hardening
 
@@ -52,7 +52,7 @@ For network posture specifically, attack path analysis identifies scenarios such
 
 Each attack path includes a risk level (High, Medium, or Low) determined by context-aware prioritization that considers data sensitivity, internet exposure, and lateral movement potential. The analysis highlights **choke points** where multiple attack paths converge, helping you prioritize remediation where it has the greatest impact.
 
-The **cloud security explorer** complements attack path analysis by letting you build custom queries across your cloud security graph. You can query for specific network conditions, such as "show all internet-facing VMs without endpoint protection that have network access to databases containing sensitive data."
+The **cloud security explorer** complements attack path analysis by letting you build custom queries across your cloud security graph. You can query for specific network conditions, such as "show all internet-facing VMs without endpoint protection, that have network access to databases containing sensitive data."
 
 ## Validate posture with Network Watcher diagnostics
 
@@ -72,5 +72,5 @@ Designing a posture management solution also requires governance mechanisms that
 
 **Governance rules** in Defender CSPM let you assign remediation owners and set due dates for unresolved recommendations. For example, you can create a governance rule that assigns all critical networking recommendations to the network security team with a seven-day remediation window. This ensures accountability and prevents recommendations from lingering unresolved.
 
-**Azure Policy** provides the enforcement layer. Use built-in or custom policy definitions to deny the creation of resources that violate your network standards, such as subnets without NSGs, VNets without DDoS protection, or VMs with public IP addresses in production subscriptions. Combine policy with Defender for Cloud recommendations to create a closed loop of detection and prevention.
+**Azure Policy** provides the enforcement layer. Use built-in or custom policy definitions to deny the creation of resources that violate your network standards, such as subnets without NSGs, virtual networks without DDoS protection, or VMs with public IP addresses in production subscriptions. Combine policy with Defender for Cloud recommendations to create a closed loop of detection and prevention.
 

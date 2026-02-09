@@ -27,7 +27,7 @@ Azure automatically creates default rules in every NSG that you can't remove but
 
 | Priority | Name | Action |
 |---|---|---|
-| 65000 | AllowVNetInBound | Allow traffic within the VNet |
+| 65000 | AllowVNetInBound | Allow traffic within the virtual network |
 | 65001 | AllowAzureLoadBalancerInBound | Allow health probes from Azure Load Balancer |
 | 65500 | DenyAllInBound | Deny all other inbound traffic |
 
@@ -35,7 +35,7 @@ Azure automatically creates default rules in every NSG that you can't remove but
 
 | Priority | Name | Action |
 |---|---|---|
-| 65000 | AllowVnetOutBound | Allow traffic within the VNet |
+| 65000 | AllowVnetOutBound | Allow traffic within the virtual network |
 | 65001 | AllowInternetOutBound | Allow outbound traffic to the internet |
 | 65500 | DenyAllOutBound | Deny all other outbound traffic |
 

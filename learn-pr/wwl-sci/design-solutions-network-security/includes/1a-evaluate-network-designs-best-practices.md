@@ -18,15 +18,15 @@ The [Microsoft cloud security benchmark (MCSB) v2](/security/benchmark/azure/ove
 
 | Control | Evaluation focus |
 |---|---|
-| **NS-1**: Establish network segmentation boundaries | VNet segmentation, NSGs, ASGs, subnet isolation |
-| **NS-2**: Secure cloud native services with network controls | Private endpoints, disabled public access, VNet integration, Network Security Perimeter |
+| **NS-1**: Establish network segmentation boundaries | virtual network segmentation, NSGs, ASGs, subnet isolation |
+| **NS-2**: Secure cloud native services with network controls | Private endpoints, disabled public access, virtual network integration, Network Security Perimeter |
 | **NS-3**: Deploy firewall at the edge of enterprise network | Azure Firewall, edge filtering, user-defined routes |
 | **NS-4**: Deploy intrusion detection/intrusion prevention systems (IDS/IPS) | Azure Firewall Premium IDPS, host-based EDR |
-| **NS-5**: Deploy DDoS protection | Azure DDoS Protection tiers on internet-facing VNets |
+| **NS-5**: Deploy DDoS protection | Azure DDoS Protection tiers on internet-facing virtual networks |
 | **NS-6**: Deploy web application firewall | Azure WAF on Application Gateway or Front Door |
 | **NS-7**: Manage network security centrally and effectively | Azure Virtual Network Manager Security Admin Rules, Firewall Manager, flow logs v2, Traffic Analytics |
 | **NS-8**: Detect and disable insecure services and protocols | Microsoft Sentinel insecure protocol detection |
-| **NS-9**: Connect on-premises or cloud network privately | ExpressRoute, VPN, VNet peering |
+| **NS-9**: Connect on-premises or cloud network privately | ExpressRoute, VPN, virtual network peering |
 | **NS-10**: Ensure Domain Name System (DNS) security | Azure Private DNS, Defender for DNS (included in Defender for Servers Plan) |
 
 Each MCSB v2 control also maps to industry frameworks such as CIS Controls v8.1, NIST SP 800-53 r5, PCI-DSS v4, NIST CSF v2.0, ISO 27001:2022, and SOC 2, helping you align your evaluation to regulatory and compliance requirements. When you evaluate a network design, use these controls as a checklist to identify gaps and prioritize remediation.
@@ -35,7 +35,7 @@ Each MCSB v2 control also maps to industry frameworks such as CIS Controls v8.1,
 
 Effective network segmentation aligns to MCSB v2 control NS-1. When evaluating a network design, determine whether it isolates workloads appropriately and controls traffic flow between segments. Key evaluation questions include:
 
-- Does the design use **subscriptions, VNets, and subnets** to create layered isolation boundaries between environments and workloads?
+- Does the design use **subscriptions, virtual networks, and subnets** to create layered isolation boundaries between environments and workloads?
 - Are **network security groups (NSGs)** applied to subnets with least-privilege rules, and are **application security groups (ASGs)** used to simplify rule management?
 - Does the network use a **hub-and-spoke topology** (or Azure Virtual WAN) with centralized security services in the hub and deny-by-default routing between spokes?
 - Are **Security Admin Rules** in Azure Virtual Network Manager enforcing organizational guardrails that workload teams can't override?
@@ -48,7 +48,7 @@ A strong network design applies defense-in-depth by layering multiple security c
 
 - **[Azure Firewall](/azure/firewall/overview)** as the central egress and east-west filtering point, with Premium features (TLS inspection and IDPS) for environments that require deep packet inspection.
 - **[Azure Web Application Firewall (WAF)](/azure/web-application-firewall/overview)** on Application Gateway or Azure Front Door for Layer 7 protection against OWASP top threats on web-facing applications.
-- **[Azure DDoS Protection](/azure/ddos-protection/ddos-protection-overview)** on perimeter VNets with internet-facing endpoints. Choose DDoS IP Protection for targeted deployments or DDoS Network Protection for enterprise-wide coverage.
+- **[Azure DDoS Protection](/azure/ddos-protection/ddos-protection-overview)** on perimeter virtual networks with internet-facing endpoints. Choose DDoS IP Protection for targeted deployments or DDoS Network Protection for enterprise-wide coverage.
 - **[Azure Private Link](/azure/private-link/private-link-overview)** to access PaaS services through private endpoints, removing public internet exposure and keeping traffic on the Azure backbone.
 - **[Azure Bastion](/azure/bastion/bastion-overview)** for secure RDP/SSH access without exposing management ports, combined with just-in-time (JIT) VM access to limit when ports are open.
 - **Azure ExpressRoute** for hybrid connectivity that keeps sensitive traffic off the public internet.
@@ -72,7 +72,7 @@ Later units in this module cover Internet Access and Private Access evaluation i
 A network design is incomplete without continuous visibility. MCSB v2 controls NS-7 and NS-8 emphasize centralized network security management and detecting insecure protocols. Evaluate whether the design includes:
 
 - **Microsoft Defender for Cloud** networking recommendations, attack path analysis, and adaptive network hardening for continuous posture assessment.
-- **VNet flow logs** and **Traffic Analytics** for traffic pattern analysis across the environment.
+- **Virtual network flow logs** and **Traffic Analytics** for traffic pattern analysis across the environment.
 - **Azure Firewall structured logs** with IDPS and threat intelligence logging enabled.
 - **Centralized SIEM integration** that sends network logs to Microsoft Sentinel for cross-source correlation and incident detection.
 
