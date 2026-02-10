@@ -8,7 +8,7 @@ metadata:
   ms.author: bradj
   ms.topic: module
   ms.service: azure
-title: "Protect and Govern AI Ready Infrastructure with Azure"
+title: "Protect and govern AI ready infrastructure with Azure"
 summary: Design and deploy governed AI infrastructure by understanding governance frameworks, enforcing policies and access controls, implementing responsible AI safeguards, and completing hands-on exercises to ensure compliant, secure AI workloads.
 abstract: |
   In this module, you learn to:
