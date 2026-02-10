@@ -8,9 +8,11 @@ Azure API Management (APIM) provides a unified API gateway, management plane, an
 
 The key components are:
 
-- **API gateway** — the endpoint that accepts API calls and routes them to backends. It enforces policies for authentication, rate limiting, transformation, and logging.
-- **Management plane** — the administrative interface for importing APIs, defining policies, and managing users and subscriptions.
-- **Developer portal** — a customizable website where API consumers discover and test APIs, obtain API keys, and view documentation.
+- **API gateway:** the endpoint that accepts API calls and routes them to backends. It enforces policies for authentication, rate limiting, transformation, and logging.
+- **Management plane:** the administrative interface for importing APIs, defining policies, and managing users and subscriptions.
+- **Developer portal:** a customizable website where API consumers discover and test APIs, obtain API keys, and view documentation.
+
+:::image type="content" source="../media/api-management-components.png" alt-text="Diagram showing key components of Azure API Management." lightbox="../media/api-management-components.png":::
 
 For architectures that require data sovereignty or reduced latency, APIM also supports a **self-hosted gateway** that runs as a container in your own infrastructure, including on-premises or in other clouds, while still reporting to the centralized management plane.
 
@@ -61,14 +63,14 @@ APIM policies run at the gateway and provide defense against common API threats:
 
 Store all sensitive configuration data, including API keys, certificates, and connection strings, as APIM named values backed by Azure Key Vault. This ensures that secrets are encrypted, audited, and can be rotated without redeploying APIM configuration.
 
-Never store secrets directly in APIM policy expressions or API configuration. The Microsoft Cloud Security Benchmark (MCSB) specifically requires that "API Management secret named values should be stored in Azure Key Vault" (control IM-8).
+Never store secrets directly in APIM policy expressions or API configuration. The Microsoft Cloud Security Benchmark v2 (MCSBv2) specifically requires that "API Management secret named values should be stored in Azure Key Vault" (control IM-8).
 
 ## API lifecycle and governance
 
 Effective API security includes governance across the API lifecycle:
 
 - **API versioning** ensures that deprecated API versions with known vulnerabilities can be retired without breaking consumers. Establish a versioning strategy and communicate deprecation timelines.
-- **Unused endpoint removal** reduces attack surface. The MCSB recommends that "API endpoints that are unused should be disabled and removed from the Azure API Management service" (control AM-3).
+- **Unused endpoint removal** reduces attack surface. The MCSBv2 recommends that "API endpoints that are unused should be disabled and removed from the Azure API Management service" (control AM-3).
 - **Subscription scoping** prevents individual subscription keys from accessing all APIs. Scope subscriptions to specific products or APIs to enforce separation of concerns.
 
 ## Microsoft Defender for APIs

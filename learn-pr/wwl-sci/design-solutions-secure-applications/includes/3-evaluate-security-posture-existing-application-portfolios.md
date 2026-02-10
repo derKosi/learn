@@ -29,7 +29,7 @@ For example, Defender for Cloud can identify that a container image deployed in 
 
 ## Microsoft Defender for Cloud Apps
 
-While Defender for Cloud focuses on the security of your IaaS and PaaS workloads, Microsoft Defender for Cloud Apps (a Cloud Access Security Broker, or CASB) provides visibility and control over the SaaS applications in your portfolio. This includes both Microsoft SaaS applications (such as Microsoft 365) and third-party SaaS applications (such as Salesforce, Box, or ServiceNow).
+While Defender for Cloud focuses on the security of your IaaS and PaaS workloads, Microsoft Defender for Cloud Apps (a Cloud Access Security Broker, or CASB) provides visibility and control over the SaaS applications in your portfolio. This includes both Microsoft SaaS applications (such as Microsoft 365) and non-Microsoft SaaS applications (such as Salesforce, Box, or ServiceNow).
 
 Defender for Cloud Apps delivers full protection for SaaS applications across four capability areas:
 
@@ -52,10 +52,10 @@ Define the minimum security requirements all applications must meet. Use the Mic
 
 Not all applications warrant the same level of scrutiny. Classify your portfolio into tiers based on:
 
-- **Data sensitivity** — applications processing regulated or classified data require the most rigorous assessment.
-- **External exposure** — internet-facing applications and APIs carry more risk than internal tools.
-- **Business criticality** — applications supporting critical business processes require higher availability and security assurance.
-- **User population** — applications serving external customers face different threat profiles than internal employee tools.
+- **Data sensitivity:** applications processing regulated or classified data require the most rigorous assessment.
+- **External exposure:** internet-facing applications and APIs carry more risk than internal tools.
+- **Business criticality:** applications supporting critical business processes require higher availability and security assurance.
+- **User population:** applications serving external customers face different threat profiles than internal employee tools.
 
 ### Assess and prioritize findings
 

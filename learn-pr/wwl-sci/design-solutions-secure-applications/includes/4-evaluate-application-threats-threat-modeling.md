@@ -30,15 +30,19 @@ For each component and data flow in your architecture, systematically evaluate p
 
 ## The threat modeling process
 
+The following diagram illustrates the four-step process for threat modeling. Each step builds on the previous one, starting with understanding what you're building and ending with validation that your mitigations are effective.
+
+:::image type="content" source="../media/security-development-lifecycle-approach-v2.png" alt-text="Diagram that shows the steps to use in threat modeling." border="true" lightbox="../media/security-development-lifecycle-approach-v2.png":::
+
 ### Step 1: Create a data flow diagram
 
 Build a data flow diagram (DFD) that maps the system's key elements:
 
-- **External entities** — users, external systems, third-party APIs that interact with the application.
-- **Processes** — application components that transform or route data.
-- **Data stores** — databases, caches, file systems, or message queues.
-- **Data flows** — the movement of data between entities, processes, and stores.
-- **Trust boundaries** — points where the level of trust changes, such as between the internet and your internal network, or between two different Azure subscriptions.
+- **External entities:** users, external systems, third-party APIs that interact with the application.
+- **Processes:** application components that transform or route data.
+- **Data stores:** databases, caches, file systems, or message queues.
+- **Data flows:** the movement of data between entities, processes, and stores.
+- **Trust boundaries:** points where the level of trust changes, such as between the internet and your internal network, or between two different Azure subscriptions.
 
 Trust boundaries are critical for architects. They represent the points where security controls must exist to prevent unauthorized access. Every data flow that crosses a trust boundary requires authentication, authorization, and validation.
 
@@ -48,17 +52,17 @@ Apply STRIDE to each element in the diagram. The Microsoft Threat Modeling Tool 
 
 Focus particularly on:
 
-- **External-facing interfaces** — APIs, web applications, and services exposed to the internet.
-- **Privileged operations** — administrative functions, deployment processes, and secret management.
-- **Data handling** — how sensitive data moves through the system, where it's stored, who can access it, and whether it's encrypted appropriately.
+- **External-facing interfaces:** APIs, web applications, and services exposed to the internet.
+- **Privileged operations:** administrative functions, deployment processes, and secret management.
+- **Data handling:** how sensitive data moves through the system, where it's stored, who can access it, and whether it's encrypted appropriately.
 
 ### Step 3: Prioritize and mitigate
 
 Not all threats carry equal risk. Prioritize based on the likelihood of exploitation and the business impact if the threat materializes. Consider using a risk matrix that factors in:
 
-- **Attack complexity** — how difficult is it for an attacker to exploit the threat?
-- **Impact severity** — what happens to the business if the attack succeeds?
-- **Existing controls** — do current security measures already reduce the risk?
+- **Attack complexity:** how difficult is it for an attacker to exploit the threat?
+- **Impact severity:** what happens to the business if the attack succeeds?
+- **Existing controls:** do current security measures already reduce the risk?
 
 For each high-priority threat, define specific mitigations. Mitigations should follow defense-in-depth principles:
 
@@ -73,7 +77,7 @@ Review the threat model with both development and security stakeholders. Verify 
 
 ## Microsoft Threat Modeling Tool
 
-The Microsoft Threat Modeling Tool supports this process. It provides:
+The [Microsoft Threat Modeling Tool](/azure/security/develop/threat-modeling-tool) supports the threat modeling process. It provides:
 
 - Templates for common architecture patterns (web applications, APIs, microservices, IoT solutions).
 - Automated threat identification based on component types and data flows.
@@ -91,13 +95,13 @@ As an architect, you should design a process that scales threat modeling across 
 - **Build a Security Champions program.** Train designated security champions in each development team on STRIDE methodology. Champions facilitate threat modeling sessions for their teams and escalate complex scenarios to the centralized security team.
 - **Version-control threat models.** Store threat models as code (JSON/YAML definitions) alongside architecture documentation, enabling automated analysis and review as part of continuous integration and continuous delivery (CI/CD) processes.
 
-## Threat modeling for specific architectures
+## Threat modeling considerations for specific architectures
 
-Different application architectures require different threat modeling focus areas:
+When applying threat modeling to your organization's workloads, consider how different application architectures shift the focus of your analysis:
 
-- **Microservices** — focus on inter-service communication, service mesh security, API gateway controls, and blast radius containment.
-- **Serverless** — focus on event source injection, function chaining abuse, and overprivileged execution roles.
-- **Container-based** — focus on image integrity, container escape, host isolation, and network policy enforcement.
-- **API-first** — focus on input validation, rate limiting, authentication and authorization at the gateway, and excessive data exposure.
+- **Microservices:** focus on inter-service communication, service mesh security, API gateway controls, and blast radius containment.
+- **Serverless:** focus on event source injection, function chaining abuse, and overprivileged execution roles.
+- **Container-based:** focus on image integrity, container escape, host isolation, and network policy enforcement.
+- **API-first:** focus on input validation, rate limiting, authentication and authorization at the gateway, and excessive data exposure.
 
 

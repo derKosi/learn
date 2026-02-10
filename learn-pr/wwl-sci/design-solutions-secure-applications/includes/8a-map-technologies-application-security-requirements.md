@@ -12,15 +12,15 @@ Application security requirements generally fall into these categories. For each
 |---|---|
 | Authenticate users to web applications and APIs | Microsoft Entra ID, Microsoft Entra External ID, OAuth 2.0/OpenID Connect (OIDC) |
 | Authenticate services and workloads to Azure resources | Managed identities, workload identity federation |
-| Enforce least-privilege access for applications | Azure RBAC, Microsoft Entra app roles, API scopes |
+| Enforce least-privilege access for applications | Azure role-based access control (RBAC), Microsoft Entra app roles, API scopes |
 | Detect compromised workload identities | Microsoft Entra ID Protection, Conditional Access for workload IDs |
-| Review and reduce standing permissions | PIM access reviews for service principals |
+| Review and reduce standing permissions | Privileged Identity Management (PIM) access reviews for service principals |
 
 ### Network and perimeter protection
 
 | Requirement | Azure technologies |
 |---|---|
-| Protect web applications from OWASP Top 10 attacks | Azure WAF on Application Gateway or Front Door |
+| Protect web applications from Open Worldwide Application Security Project (OWASP) Top 10 attacks | Azure Web Application Firewall (WAF) on Application Gateway or Front Door |
 | Protect globally distributed apps at the edge | Azure Front Door with WAF |
 | Isolate APIs from public internet | API Management with virtual network integration (internal mode), private endpoints |
 | Rate limit API calls to prevent abuse | Azure API Management policies, Azure Front Door rate limiting |
@@ -30,7 +30,7 @@ Application security requirements generally fall into these categories. For each
 
 | Requirement | Azure technologies |
 |---|---|
-| Encrypt data in transit | TLS/mTLS enforcement in API Management and Application Gateway |
+| Encrypt data in transit | Transport Layer Security (TLS)/mutual TLS (mTLS) enforcement in API Management and Application Gateway |
 | Protect application secrets and certificates | Azure Key Vault, managed identities (eliminate secrets where possible) |
 | Prevent data leakage through APIs | API Management response transformation policies, Defender for APIs sensitive data detection |
 | Classify and protect data in SaaS applications | Microsoft Defender for Cloud Apps, Microsoft Purview Information Protection |
@@ -39,9 +39,9 @@ Application security requirements generally fall into these categories. For each
 
 | Requirement | Azure technologies |
 |---|---|
-| Static code analysis for vulnerabilities | GitHub CodeQL, Microsoft Security DevOps Extension (SAST) |
-| Dynamic application testing in runtime | DAST scanning in staging environments, Microsoft Defender for Containers |
-| Software supply chain security | GitHub Dependabot, Azure Artifacts, SBOM generation |
+| Static code analysis for vulnerabilities | GitHub CodeQL, Microsoft Security DevOps Extension for static application security testing (SAST) |
+| Dynamic application testing in runtime | Dynamic application security testing (DAST) in staging environments, Microsoft Defender for Containers |
+| Software supply chain security | GitHub Dependabot, Azure Artifacts, software bill of materials (SBOM) generation |
 | Secret scanning and push protection | GitHub Advanced Security secret scanning |
 | Infrastructure-as-code security validation | Checkov, Terrascan, Template Analyzer via Security DevOps Extension |
 | Secure pipeline infrastructure | Azure Key Vault for secrets, managed identity for pipeline auth, approval gates |
@@ -51,7 +51,7 @@ Application security requirements generally fall into these categories. For each
 | Requirement | Azure technologies |
 |---|---|
 | Application-layer threat detection | Microsoft Defender for App Service, Defender for Containers, Defender for APIs |
-| Security posture assessment and scoring | Microsoft Defender for Cloud (CSPM), Secure Score |
+| Security posture assessment and scoring | Microsoft Defender for Cloud with cloud security posture management (CSPM), Secure Score |
 | Attack path identification | Defender CSPM attack path analysis |
 | DevOps security monitoring | Azure DevOps Audit Streaming to Microsoft Sentinel |
 | WAF event correlation and incident response | Azure WAF logs to Microsoft Sentinel |
@@ -92,7 +92,7 @@ A Kubernetes-hosted microservices architecture requires supply chain and runtime
 - Microsoft Defender for Containers for runtime protection
 - Workload identity federation for pod-to-Azure-resource authentication
 - Network policies for inter-service segmentation
-- SAST and DAST integrated into the CI/CD pipeline
+- SAST and DAST integrated into the continuous integration and continuous delivery (CI/CD) pipeline
 - Image signing for deployment integrity
 
 ### CI/CD pipeline
@@ -110,7 +110,7 @@ The development pipeline itself is a critical workload requiring protection:
 
 After mapping technologies to requirements, review your architecture for gaps:
 
-- Are there requirements without corresponding technology? This indicates a need for additional services or custom controls.
+- Are there requirements without corresponding technology? This indicates a need for extra services or custom controls.
 - Are there technologies deployed without corresponding requirements? This indicates potential cost savings or simplification opportunities.
 - Do multiple technologies overlap on the same requirement? Evaluate whether the overlap provides defense in depth (good) or redundant cost without added security value (optimize).
 - Are there trust boundaries without security controls? Every crossing of a trust boundary, as identified in your threat models, should have authentication, authorization, and monitoring.

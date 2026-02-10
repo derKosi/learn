@@ -16,6 +16,8 @@ Human identities and workload identities have fundamentally different security c
 
 The number of workload identities in most organizations is growing dramatically and often exceeds the number of human identities. Adversaries increasingly target workload identities because they tend to have weaker security controls than human accounts.
 
+:::image type="content" source="../media/identity-types.png" alt-text="Diagram that shows different types of machine and human identities." border="true" lightbox="../media/identity-types.png":::
+
 ## Design with managed identities
 
 Managed identities should be your default choice for workloads running on Azure. They eliminate credential management entirely because Azure handles the identity lifecycle, credential rotation, and token issuance automatically.

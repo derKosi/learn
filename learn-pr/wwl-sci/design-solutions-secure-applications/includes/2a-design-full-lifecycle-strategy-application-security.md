@@ -20,7 +20,7 @@ During the design phase, convert security requirements into technical specificat
 
 **Select approved frameworks and supply chain components.** Your design should mandate the use of trusted frameworks and libraries. Maintain a list of approved and prohibited dependencies and enforce it through guardrails in the development pipeline. Automate dependency scanning to verify that all components meet security requirements.
 
-**Define security design patterns.** Identify patterns that support segmentation, strong authorization, and uniform application security. Patterns like the Quarantine pattern help verify and block software that could introduce vulnerabilities. For more guidance, refer to the Azure Well-Architected architecture design patterns that support security.
+**Define security design patterns.** Identify patterns that support segmentation, strong authorization, and uniform application security. Patterns like the Quarantine pattern help verify and block software that could introduce vulnerabilities. For more information, see the Azure Well-Architected architecture design patterns that support security.
 
 **Perform threat modeling.** Conduct initial threat modeling during the design phase to confirm that design choices align with security requirements and to expose gaps that require mitigation. For workloads handling highly sensitive data, consider engaging specialized security experts. Threat modeling isn't a one-time activity but a continuous process that evolves with the software.
 
@@ -62,7 +62,7 @@ Security posture degrades over time if not actively maintained. This phase ensur
 
 - **Patch management.** Keep software, libraries, and infrastructure components current with security updates.
 - **Continuous improvement.** Regularly assess and refine the security of the development process through code reviews, feedback, and lessons learned from incidents and evolving threats.
-- **Decommission unused assets.** Remove legacy assets that are no longer needed. Every unused component is additional attack surface.
+- **Decommission unused assets.** Remove legacy assets that are no longer needed. Every unused component is another attack surface.
 - **Incident integration.** When issues are found in production, feed them back into the development process to prevent recurrence.
 
 

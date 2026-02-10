@@ -43,14 +43,14 @@ You've learned how to:
 - [Defender for App Service overview](/azure/defender-for-cloud/defender-for-app-service-introduction)
 - [Defender for Containers overview](/azure/defender-for-cloud/defender-for-containers-introduction)
 - [Microsoft Cloud Security Benchmark overview](/security/benchmark/azure/overview)
-- [Azure Well-Architected Framework — Security pillar](/azure/well-architected/security/)
+- [Azure Well-Architected Framework: Security pillar](/azure/well-architected/security/)
 
 ### Threat modeling
 
 - [Microsoft Threat Modeling Tool](/azure/security/develop/threat-modeling-tool)
 - [Recommendations for threat analysis](/azure/well-architected/security/threat-model)
 - [STRIDE threat model](https://www.microsoft.com/securityengineering/sdl/threatmodeling)
-- [MCSB DS-1: Conduct threat modeling](/security/benchmark/azure/mcsb-v2-devop-security#ds-1-conduct-threat-modeling)
+- [MCSBv2 DS-1: Conduct threat modeling](/security/benchmark/azure/mcsb-v2-devop-security#ds-1-conduct-threat-modeling)
 - [Introduction to threat modeling (Microsoft Learn training)](/training/modules/tm-introduction-to-threat-modeling/)
 
 ### Workload identities
@@ -59,7 +59,7 @@ You've learned how to:
 - [Managed identities for Azure resources](/entra/identity/managed-identities-azure-resources/overview)
 - [Workload identity federation](/entra/workload-id/workload-identity-federation)
 - [Conditional Access for workload identities](/entra/identity/conditional-access/workload-identity)
-- [Microsoft Entra ID Protection — workload identity risk](/entra/id-protection/concept-workload-identity-risk)
+- [Microsoft Entra ID Protection: workload identity risk](/entra/id-protection/concept-workload-identity-risk)
 - [Access reviews for service principals](/entra/id-governance/privileged-identity-management/pim-create-roles-and-resource-roles-review)
 
 ### API management and security
