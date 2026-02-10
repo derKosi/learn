@@ -63,10 +63,10 @@ Managed identities are another type of identity used for Azure resources:
 
 Agent identities provide specific security benefits designed for AI agents:
 
-1. **Distinguish AI operations**: Operations performed by AI agents are clearly separated from operations performed by workforce, customer, or traditional workload identities in audit logs and monitoring
-2. **Right-sized access**: Enable AI agents to gain appropriate access across systems without excessive permissions
-3. **Prevent excessive privilege**: Block agents from accessing critical security roles and systems
-4. **Scale identity management**: Support large numbers of AI agents that can be quickly created and destroyed without leaving orphaned credentials
+- **Distinguish AI operations**: Operations performed by AI agents are clearly separated from operations performed by workforce, customer, or traditional workload identities in audit logs and monitoring
+- **Right-sized access**: Enable AI agents to gain appropriate access across systems without excessive permissions
+- **Prevent excessive privilege**: Block agents from accessing critical security roles and systems
+- **Scale identity management**: Support large numbers of AI agents that can be quickly created and destroyed without leaving orphaned credentials
 
 ## Authentication scenarios
 

@@ -44,8 +44,8 @@ Agents in Microsoft Foundry access remote resources and tools by using agent ide
 > When you publish an agent, you must reassign RBAC permissions to the new agent identity for any resources that the agent needs to access. Permissions assigned to the shared identity don't automatically transfer.
 
 Currently, the tools that support authentication with agent identity are:
-1. **Model Context Protocol (MCP)**: Use your agent's identity to authenticate with MCP servers that support agent identity authentication
-2. **Agent-to-Agent (A2A)**: Enable secure communication between agents using agent identities
+- **Model Context Protocol (MCP)**: Use your agent's identity to authenticate with MCP servers that support agent identity authentication
+- **Agent-to-Agent (A2A)**: Enable secure communication between agents using agent identities
 
 ## Azure App Service and Azure Functions
 
@@ -123,8 +123,8 @@ Key features:
 
 When planning your agent deployments, consider:
 
-1. **Which platforms will you use?** Determine which Microsoft products host your agents
-2. **Identity governance requirements**: Understand how agent identities are created, managed, and governed
-3. **Permission management**: Plan how permissions are assigned, especially when publishing agents or moving them between environments
-4. **Audit and monitoring**: Ensure you have processes to monitor agent identity activity in the Microsoft Entra admin center
-5. **Lifecycle management**: Plan for how agent identities are created and deleted as agents are deployed and retired
+- **Which platforms will you use?** Determine which Microsoft products host your agents
+- **Identity governance requirements**: Understand how agent identities are created, managed, and governed
+- **Permission management**: Plan how permissions are assigned, especially when publishing agents or moving them between environments
+- **Audit and monitoring**: Ensure you have processes to monitor agent identity activity in the Microsoft Entra admin center
+- **Lifecycle management**: Plan for how agent identities are created and deleted as agents are deployed and retired

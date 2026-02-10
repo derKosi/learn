@@ -2,7 +2,7 @@ Managing agent identities requires specific Microsoft Entra roles and understand
 
 ## Required roles for managing agent identities
 
-There are several different types of roles that can perform operations on agent identies, from viewing to managing.
+There are several different types of roles that can perform operations on agent identities, from viewing to managing.
 
 ### Roles for viewing agent identities
 
@@ -13,11 +13,11 @@ To view agent identities in the Microsoft Entra admin center:
 
 To manage agent identities (create, update, disable, delete), you need one of the following roles:
 
-1. **Agent ID Administrator**: Full permissions to manage agent identities, agent identity blueprints, and related configurations. Use the role for agent identity management (recommended).
+- **Agent ID Administrator**: Full permissions to manage agent identities, agent identity blueprints, and related configurations. Use the role for agent identity management (recommended).
 
-2. **Cloud Application Administrator**: Can manage enterprise applications and agent identities. This role has broader application management permissions beyond just agent identities.
+- **Cloud Application Administrator**: Can manage enterprise applications and agent identities. This role has broader application management permissions beyond just agent identities.
 
-3. **Owner of the agent identity**: If you're designated as an owner of a specific agent identity, you can manage that agent identity without holding a tenant-wide administrator role.
+- **Owner of the agent identity**: If you're designated as an owner of a specific agent identity, you can manage that agent identity without holding a tenant-wide administrator role.
 
 ### Roles for creating agent identity blueprints
 
@@ -77,9 +77,9 @@ A critical scenario for permission management occurs when publishing agents in p
 
 When you publish an agent:
 
-1. **RBAC permissions don't transfer**: Permissions assigned to the shared project identity don't automatically transfer to the new distinct identity
-2. **You must reassign permissions**: Navigate to each Azure resource the agent accesses and assign the required RBAC role to the new agent identity
-3. **Verify access**: Test that the published agent can still access all required resources
+- **RBAC permissions don't transfer**: Permissions assigned to the shared project identity don't automatically transfer to the new distinct identity
+- **You must reassign permissions**: Navigate to each Azure resource the agent accesses and assign the required RBAC role to the new agent identity
+- **Verify access**: Test that the published agent can still access all required resources
 
 ### Example: Publishing a Microsoft Foundry agent
 
@@ -103,7 +103,8 @@ Agent identities can be assigned Azure RBAC roles just like service principals:
 5. **Search for the agent identity** by its name or object ID
 6. **Assign the role**
 
-Note: You need the object ID of the agent identity for role assignments.
+> [!Note]
+> You need the object ID of the agent identity for role assignments.
 
 ## Microsoft Graph permissions
 
