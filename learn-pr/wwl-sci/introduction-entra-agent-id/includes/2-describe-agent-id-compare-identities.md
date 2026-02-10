@@ -21,10 +21,10 @@ An agent identity blueprint serves as the reusable, governing template from whic
 
 Agent identity blueprints serve four essential purposes:
 
-1. **Type classification**: Establishes the category of agent (for example, "Sales Assistant Agent"), enabling administrators to apply policies, disable permissions, or audit agents at scale
-2. **Template for creation**: Defines common characteristics shared across all agent identities, including description, app roles, verified publisher, and authentication settings
-3. **Credential holder**: Holds OAuth credentials (client ID, secrets, certificates, or federated credentials) used to request tokens from Microsoft Entra ID
-4. **Container for management**: Provides a logical container where administrators can apply policies, permissions, and controls that affect all agent identities created from the blueprint
+- **Type classification**: Establishes the category of agent (for example, "Sales Assistant Agent"), enabling administrators to apply policies, disable permissions, or audit agents at scale
+- **Template for creation**: Defines common characteristics shared across all agent identities, including description, app roles, verified publisher, and authentication settings
+- **Credential holder**: Holds OAuth credentials (client ID, secrets, certificates, or federated credentials) used to request tokens from Microsoft Entra ID
+- **Container for management**: Provides a logical container where administrators can apply policies, permissions, and controls that affect all agent identities created from the blueprint
 
 ## Impersonation model
 
