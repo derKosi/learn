@@ -1,14 +1,14 @@
 ### YamlMime:Module
 uid: learn.wwl.implement-security-controls-azure-ai-ready-infrastructure
 metadata:
-  title: "Implement security controls for Azure AI-ready infrastructure"
+  title: "Implement Security Controls for Azure AI-ready Infrastructure" 
   description: "This module equips you to configure Azure's foundational security controls for AI workloads. You'll start by configuring Microsoft Entra ID security principals that define *who* and *what* can access your AI resources—from data scientists needing interactive workspace access to managed identities enabling secure service-to-service communication."
   ms.date: 02/09/2026
   author: wwlpublish
   ms.author: bradj
   ms.topic: module-intro-to-product
   ms.service: azure
-title: "Implement Security Controls for Azure AI-ready Infrastructure"
+title: "Implement security controls for Azure AI-ready infrastructure"
 summary: This module equips you to configure Azure's foundational security controls for AI workloads. You'll start by configuring Microsoft Entra ID security principals that define *who* and *what* can access your AI resources—from data scientists needing interactive workspace access to managed identities enabling secure service-to-service communication.
 abstract: |
   By the end of this module, you are able to:
