@@ -12,11 +12,11 @@ The hub itself doesn't replicate data between regions—that responsibility belo
 
 ## Deployment patterns for production resilience
 
-Three deployment patterns address different availability requirements and cost constraints. A single-region hub provides 99.9% availability based on Azure's service-level agreement for individual components, suitable for development environments where temporary unavailability during regional outages is acceptable. With this approach, recovery requires manual intervention to recreate resources in a different region and restore data from backups, typically taking several hours.
+Three deployment patterns address different availability requirements and cost constraints. A single-region hub provides high availability based on Azure's individual components suitable for development environments where temporary unavailability during regional outages is acceptable. With this approach, recovery requires manual intervention to recreate resources in a different region and restore data from backups, typically taking several hours.
 
-Active-passive deployment creates a secondary hub in a standby region with replicated storage and container images but minimal or no compute resources provisioned until failover occurs. This pattern achieves 99.95% availability by maintaining infrastructure readiness while optimizing costs—you only pay for compute in the secondary region when you scale up during an outage. Your application layer monitors primary hub health and switches traffic to the secondary hub when it detects failures, then provisions compute resources on demand to handle the redirected workload.
+Active-passive deployment creates a secondary hub in a standby region with replicated storage and container images but minimal or no compute resources provisioned until failover occurs. This pattern achieves high availability by maintaining infrastructure readiness while optimizing costs—you only pay for compute in the secondary region when you scale up during an outage. Your application layer monitors primary hub health and switches traffic to the secondary hub when it detects failures, then provisions compute resources on demand to handle the redirected workload.
 
-Active-active deployment runs production workloads simultaneously across both hubs with full compute capacity in each region. This pattern delivers 99.99% availability and reduces latency for global users by routing requests to the nearest hub, but costs double because you maintain full infrastructure in both regions continuously. Organizations choose this pattern when they need geographic load distribution for regulatory compliance, data residency requirements, or minimal-latency access from multiple continents. At the same time, active-active increases operational complexity because you must coordinate model deployments and configuration changes across both hubs to maintain consistency.
+Active-active deployment runs production workloads simultaneously across both hubs with full compute capacity in each region. This pattern delivers high availability and reduces latency for global users by routing requests to the nearest hub, but costs double because you maintain full infrastructure in both regions continuously. Organizations choose this pattern when they need geographic load distribution for regulatory compliance, data residency requirements, or minimal-latency access from multiple continents. At the same time, active-active increases operational complexity because you must coordinate model deployments and configuration changes across both hubs to maintain consistency.
 
 :::image type="content" source="../media/geographic-load-distribution-regulatory-compliance.png" alt-text="Diagram showing how the active-active approach increases operational stability.":::
 
@@ -27,26 +27,6 @@ Your application layer handles failover logic by implementing health checks that
 During failover, the secondary hub uses its connections to geo-replicated storage and container registry to serve requests without requiring data synchronization. However, any training jobs or experiments running in the primary region at the time of failure won't automatically resume in the secondary region—you must manually resubmit those jobs if they're critical to complete. This becomes especially important when planning maintenance windows or testing failover procedures, because you need to account for work-in-progress that may be lost during transitions. With this understanding of hub architecture and failover patterns, you're ready to examine how geo-redundant storage protects the training datasets and model artifacts that hubs depend on.
 
 :::image type="content" source="../media/foundry-multi-region-hub-architecture.png" alt-text="Diagram showing how dependent resource connections and failover routing between primary and secondary regions.":::
-
-```mermaid
-graph TD
-    A[Microsoft Foundry Hub - Primary Region] -->|Contains| B[AI Projects]
-    A -->|Connects to| C[Azure Storage Account]
-    A -->|Connects to| D[Azure Container Registry]
-    A -->|Connects to| E[Compute Clusters]
-    F[Microsoft Foundry Hub - Secondary Region] -->|Contains| G[AI Projects]
-    F -->|Connects to| H[Geo-Replicated Storage]
-    F -->|Connects to| I[Geo-Replicated ACR]
-    F -->|Connects to| J[Compute Clusters]
-    K[Application Layer] -->|Routes requests| A
-    K -->|Failover routes| F
-    C -.->|Replicates data| H
-    D -.->|Replicates images| I
-```
-
-*Microsoft Foundry multi-region hub architecture showing dependent resource connections and failover routing between primary and secondary regions*
-
-Alt text: Architecture diagram showing two Microsoft Foundry hubs deployed in primary and secondary regions. The primary hub in the top section contains AI projects and connects to storage account, container registry, and compute clusters in the same region. The secondary hub in the bottom section mirrors this structure with its own AI projects and regional resources. Dotted lines show data replication flowing from primary storage to geo-replicated storage and from primary container registry to geo-replicated registry. An application layer at the bottom routes inference requests to the primary hub with a failover path to the secondary hub when needed.
 
 ## More resources
 
