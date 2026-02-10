@@ -14,7 +14,6 @@ Build on this foundation by exploring advanced governance patterns for enterpris
 Continue learning with these resources that extend the security concepts you've practiced:
 
 - [Implement network isolation for Azure Machine Learning](/azure/machine-learning/how-to-network-isolation-planning): Configure virtual networks and private endpoints for production AI workloads
-- [Microsoft Defender for Cloud and AI services](/azure/defender-for-cloud/defender-for-ai-services): Automated security assessment and threat detection for Azure AI resources
 - [Azure landing zones for AI](/azure/cloud-adoption-framework/scenarios/ai): Enterprise-scale reference architectures combining governance, networking, and identity patterns
 
 
