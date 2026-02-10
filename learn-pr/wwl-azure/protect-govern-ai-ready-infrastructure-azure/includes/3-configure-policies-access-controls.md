@@ -2,8 +2,6 @@ Consider a scenario where your data science team wants to deploy Azure OpenAI mo
 
 With Azure Policy, you define rules once and enforce them consistently. For example, an "Allowed locations" policy restricts Azure OpenAI deployments to European regions only, ensuring regulatory compliance by preventing data transfer outside the EU. When a developer attempts to create a resource in an unauthorized region, the deployment fails immediately with a clear error message explaining the violation and suggesting compliant alternatives. This becomes especially important for organizations operating in multiple regulatory jurisdictions: you assign different policy sets to subscriptions based on their data classification, automatically adapting controls to each workload's risk profile.
 
-:::image type="content" source="../media/azure-policy-deployment-development.png" alt-text="Diagram showing how Azure Policy governs deployments across different environments.":::
-
 Encryption and configuration policies enforce consistent security and cost controls across AI resources.
 - Policy enforcement requires customer‑managed keys in Azure Key Vault for services processing sensitive data, preventing deployments without approved encryption.
 - Policies also restrict unsupported SKU tiers, reducing the risk of accidental cost overruns from inappropriate resource pricing choices.
