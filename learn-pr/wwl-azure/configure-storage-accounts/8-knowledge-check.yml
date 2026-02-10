@@ -25,7 +25,7 @@ quiz:
     choices:
     - content: "Locally redundant storage"
       isCorrect: false
-      explanation: "Incorrect. Locally redundant storage replicates data three times within a single data center in the primary region."
+      explanation: "Incorrect. Locally redundant storage replicates data three times within a single data center in the primary region. "
     - content: "Read-access geo-redundant storage"
       isCorrect: true
       explanation: "Correct. Read-access geo-redundant storage is the default replication option. Geo-redundant storage (GRS) copies the data synchronously three times within a single physical location in the primary region by using LRS. The data is then copied asynchronously to a single physical location in the secondary region."
