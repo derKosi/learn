@@ -62,8 +62,6 @@ The Foundry portal provides a modern web-based interface for developing, testing
 > [!NOTE]
 > Foundry portal has a *classic* user interface (UI) and a *new* user interface. The two provide slightly different experiences for users. Choose the *new* portal for a seamless experience that combines simplicity with powerful and secure tools to build, manage and grow multi-agent applications. Only Foundry projects are visible here - use *classic* for all other resource types. Users can toggle back and forth between the classic and new interfaces as needed. 
 
-![Screenshot of Foundry discovery page which shows models and other Foundry tools.](../media/foundry-discover-page.png)
-
 In the *new* Foundry portal you can discover models and tools, build agents, manage the operation of those agents, and much more. At any time, you can get help with **Ask AI** agent helper. The *Ask AI* experience uses specialized sub‑agents to answer questions and help with tasks across Microsoft Foundry. It can guide you through documentation, explain model catalog capabilities, troubleshoot issues, and manage model deployments, quotas, and operations. It also compares and analyzes models, interprets monitoring dashboards, and supports end‑to‑end evaluation workflows for language models and agents.
 
 ![Screenshot of Foundry Docs page with the agent helper open.](../media/foundry-docs-page.png)
