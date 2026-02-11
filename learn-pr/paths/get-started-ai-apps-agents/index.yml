@@ -29,7 +29,7 @@ subjects:
 products:
 - azure-ai-foundry
 modules:
-- learn.wwl.get-started-ai-in-foundry
+- learn.wwl.get-started-with-ai-in-azure
 - learn.wwl.get-started-with-generative-ai-and-agents
 trophy:
   uid: learn.get-started-ai-apps-agents.trophy
