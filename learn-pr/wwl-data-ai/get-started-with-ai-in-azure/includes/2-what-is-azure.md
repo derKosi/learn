@@ -25,7 +25,7 @@ Networking makes sure your apps can talk to each other securely and efficiently.
 
 When a user gets started with Azure, their access needs to be organized and managed. Azure organizes access and management by **tenants**, **subscriptions**, **resource groups**, and **resources**. 
 
-![Screenshot of diagram of Azure's organizational structure](../media/azure-tenant-structure.png)
+![Screenshot of diagram of Azure's organizational structure.](../media/azure-tenant-structure.png)
 
 An **Azure tenant** is an organization's home base and identity in Microsoft's cloud. Having a tenant is like having an apartment unit in a large building, where the building is Microsoft cloud. Each tenant is separate and secured from others—your organization has its own locks, rooms, and controls.
 

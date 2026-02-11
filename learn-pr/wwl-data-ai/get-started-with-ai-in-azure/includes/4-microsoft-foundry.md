@@ -62,7 +62,7 @@ The Foundry portal provides a modern web-based interface for developing, testing
 > [!NOTE]
 > Foundry portal has a *classic* user interface (UI) and a *new* user interface. The two provide slightly different experiences for users. Choose the *new* portal for a seamless experience that combines simplicity with powerful and secure tools to build, manage and grow multi-agent applications. Only Foundry projects are visible here - use *classic* for all other resource types. Users can toggle back and forth between the classic and new interfaces as needed. 
 
-![Screenshot of Foundry main page.](../media/foundry-discover-page.png)
+![Screenshot of Foundry discovery page which shows models and other Foundry tools.](../media/foundry-discover-page.png)
 
 In the *new* Foundry portal you can discover models and tools, build agents, manage the operation of those agents, and much more. At any time, you can get help with **Ask AI** agent helper. The *Ask AI* experience uses specialized sub‑agents to answer questions and help with tasks across Microsoft Foundry. It can guide you through documentation, explain model catalog capabilities, troubleshoot issues, and manage model deployments, quotas, and operations. It also compares and analyzes models, interprets monitoring dashboards, and supports end‑to‑end evaluation workflows for language models and agents.
 
@@ -85,20 +85,20 @@ An AI client application utilizes a model, data, and application logic to proces
 
 Responsibilities of the **client**:
 
-- Present a UI or CLI
-- Collect user input (text, voice, images)
-- Format the input into a prompt or API request
-- Send a request to the server (model endpoint)
-- Display the returned output
+1. Present a UI or CLI
+2. Collect user input (text, voice, images)
+3. Format the input into a prompt or API request
+4. Send a request to the server (model endpoint)
+5. Display the returned output
 
 The client requests the model for results, which is hosted by the **server**, or the *back end*. In Foundry, the server is your **model deployment**. 
 
 Responsibilities of the **server**: 
 
-- Receive the prompt
-- Run inference on the model
-- Apply system instructions, safety, context, and more
-- Return the generated output (for example: text, image, audio, or structured JSON)
+1. Receive the prompt
+2. Run inference on the model
+3. Apply system instructions, safety, context, and more
+4. Return the generated output (for example: text, image, audio, or structured JSON)
 
 Next, let's take a look at how clients connect to to Foundry models and how to use Foundry endpoints.
 
