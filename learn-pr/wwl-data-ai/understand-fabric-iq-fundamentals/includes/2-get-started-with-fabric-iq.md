@@ -1,4 +1,4 @@
-Fabric IQ is a workload in Microsoft Fabric for creating ontologies that define your business vocabulary. It sits alongside other Fabric workloads like Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, and Power BI. Within the IQ workload, you create **ontology items**—Fabric artifacts that contain your ontology definitions and data bindings.".
+Fabric IQ is a workload in Microsoft Fabric for creating ontologies that define your business vocabulary. It sits alongside other Fabric workloads like Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Intelligence, and Power BI. Within the IQ workload, you create **ontology items**—Fabric artifacts that contain your ontology definitions and data bindings.
 
 An ontology is a shared vocabulary of your business. It's made up of the things in your environment (represented as entity types), their facts (represented as properties of entity types), and the ways they connect (represented as relationships).
 

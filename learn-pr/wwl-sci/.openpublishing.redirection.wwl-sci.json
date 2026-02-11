@@ -747,6 +747,11 @@
       "source_path_from_root": "/learn-pr/wwl-sci/design-solutions-secure-microsoft-365/6-evaluate-solutions-securing-data-microsoft-purview.yml",
       "redirect_url": "/training/modules/design-solutions-secure-microsoft-365/4a-evaluate-solutions-securing-data-microsoft-purview",
       "redirect_document_id": false
+    },
+    {
+      "source_path_from_root": "/learn-pr/wwl-sci/design-solutions-secure-applications/5-design-security-lifecycle-strategy-applications.yml",
+      "redirect_url": "/training/modules/design-solutions-secure-applications/2a-design-full-lifecycle-strategy-application-security",
+      "redirect_document_id": false
     }
     ]
 }
