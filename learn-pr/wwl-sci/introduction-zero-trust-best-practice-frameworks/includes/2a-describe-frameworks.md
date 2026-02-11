@@ -12,7 +12,7 @@ CAF includes security guidance related to organizational roles and responsibilit
 
 ## Azure Well-Architected Framework
 
-The Azure Well-Architected Framework (WAF) is a design framework that improves the quality of a workload. WAF helps you design workloads that are resilient, secure, cost-optimized, operationally excellent, and performant.
+The Azure Well-Architected Framework (WAF) is a design framework that improves the quality of a workload. WAF helps you design workloads that are resilient, secure, cost-optimized, operationally excellent, and efficient.
 
 WAF is founded on five pillars of architectural excellence:
 
