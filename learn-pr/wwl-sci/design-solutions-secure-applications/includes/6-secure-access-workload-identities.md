@@ -44,7 +44,7 @@ Common federation scenarios include:
 
 When designing federation, configure federated credential subjects narrowly. For GitHub Actions, restrict the subject to a specific repository, branch, or environment rather than allowing any workflow in an organization to authenticate.
 
-## Securing workload identities
+## Secure workload identities
 
 Assigning identities to workloads isn't sufficient. You need to secure those identities with the same rigor you apply to human accounts. Microsoft Entra Workload ID provides several capabilities for this purpose:
 

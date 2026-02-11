@@ -86,7 +86,7 @@ The [Microsoft Threat Modeling Tool](/azure/security/develop/threat-modeling-too
 
 The tool is designed for use by both security specialists and developers. It produces threat models that serve as versioned artifacts stored alongside architecture documentation in source control.
 
-## Integrating threat modeling into development workflows
+## Integrate threat modeling into development workflows
 
 As an architect, you should design a process that scales threat modeling across the organization without creating bottlenecks:
 
