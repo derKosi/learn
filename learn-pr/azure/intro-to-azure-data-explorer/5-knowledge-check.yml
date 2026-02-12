@@ -6,8 +6,8 @@ metadata:
   title: Module assessment
   description: "Evaluate whether Azure Data Explorer is appropriate to process and analyze your big data."
   ms.date: 02/09/2026
-  author: uribarash
-  ms.author: urib
+  author: Naorbt00
+  ms.author: naorbiton 
   ms.topic: unit
   module_assessment: true
 durationInMinutes: 3
