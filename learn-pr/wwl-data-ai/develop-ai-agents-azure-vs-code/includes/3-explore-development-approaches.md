@@ -1,10 +1,10 @@
 Microsoft Foundry Agent Service provides flexibility in how you develop agents, with options ranging from visual interfaces to code-centric workflows. Understanding the different development approaches helps you choose the right tools for your scenarios and team preferences.
 
-## Azure portal development
+## Foundry portal development
 
-The Azure portal provides a web-based interface for creating and managing AI agents without writing code. This approach is ideal when you want to quickly prototype ideas, collaborate with non-technical stakeholders, or manage agents through a centralized interface.
+The Foundry portal provides a web-based interface for creating and managing AI agents without writing code. This approach is ideal when you want to quickly prototype ideas, collaborate with non-technical stakeholders, or manage agents through a centralized interface.
 
-### When to use the Azure portal
+### When to use the Foundry portal
 
 The portal excels in these scenarios:
 
@@ -14,7 +14,7 @@ The portal excels in these scenarios:
 - **Team collaboration** - Share agent configurations with stakeholders who prefer visual interfaces
 - **Resource oversight** - Monitor token usage, latency, and evaluation outcomes through dashboards
 
-The Azure portal provides immediate access to agent creation without installing additional tools. You simply navigate to your Azure AI project, select the Agents section, and start building.
+The Azure portal provides immediate access to agent creation without installing additional tools. You simply navigate to your Foundry project, select the Agents section, and start building.
 
 ## Visual Studio Code development
 
@@ -48,7 +48,7 @@ The VS Code extension is ideal for:
 - **Code-first development** - Edit YAML configurations directly for precise control
 - **Local development** - Work on agent designs offline before deploying to Azure
 
-The extension installs directly from the Visual Studio Code Marketplace and connects to your existing Azure AI projects.
+The extension installs directly from the Visual Studio Code Marketplace and connects to your existing Foundry projects.
 
 ### Extension installation
 
@@ -73,7 +73,7 @@ Regardless of your chosen approach, agent development follows a consistent patte
 1. **Deploy** the agent to production
 1. **Integrate** the agent into your applications
 
-The Azure portal and VS Code extension both support this workflow, differing primarily in interface style rather than capabilities.
+The Foundry portal and VS Code extension both support this workflow, differing primarily in interface style rather than capabilities.
 
 ## Required Azure resources
 
@@ -97,9 +97,9 @@ These services integrate with your Foundry project as needed, but aren't require
 
 ## Choosing your development approach
 
-Both the Azure portal and Visual Studio Code extension provide complete agent development capabilities. Your choice depends on your workflow preferences, team composition, and integration requirements:
+Both the Foundry portal and Visual Studio Code extension provide complete agent development capabilities. Your choice depends on your workflow preferences, team composition, and integration requirements:
 
-Choose the **Azure portal** when you want visual configuration, centralized management, or quick prototyping without local development setup.
+Choose the **Foundry portal** when you want visual configuration, centralized management, or quick prototyping without local development setup.
 
 Choose **Visual Studio Code** when you prefer developer-centric workflows, need tight integration with application code, or want version-controlled configuration files.
 

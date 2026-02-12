@@ -6,7 +6,7 @@ Thorough testing ensures your agents behave reliably across diverse scenarios be
 
 ### Testing with integrated playgrounds
 
-Both the Azure portal and Visual Studio Code extension provide playgrounds for interactive testing. These environments simulate real user interactions while providing visibility into agent decision-making.
+Both the Foundry portal and Visual Studio Code extension provide playgrounds for interactive testing. These environments simulate real user interactions while providing visibility into agent decision-making.
 
 **Using the playground effectively:**
 
@@ -68,17 +68,17 @@ When deploying agents, consider conversation management strategies:
 
 **Privacy and retention** - Define retention policies for conversation data. Determine how long message histories should be preserved and when they should be deleted.
 
-You can view and manage conversations through the Azure portal or programmatically through the Responses API, providing visibility into how users interact with your deployed agents.
+You can view and manage conversations through the Foundry portal or programmatically through the Responses API, providing visibility into how users interact with your deployed agents.
 
 ## Deployment approaches
 
 Microsoft Foundry supports multiple deployment approaches to match different operational needs and team workflows.
 
-### Deploying from the Azure portal
+### Deploying from the Foundry portal
 
 Portal deployment provides a visual, guided experience:
 
-1. Navigate to your agent in the Azure portal
+1. Navigate to your agent in the Foundry portal
 1. Verify configuration and test results are satisfactory
 1. Select **Deploy** from the agent's page
 1. Confirm deployment settings

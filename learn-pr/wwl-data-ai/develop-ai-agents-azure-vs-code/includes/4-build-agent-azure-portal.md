@@ -1,19 +1,8 @@
-Building your first AI agent in the Azure portal provides an accessible entry point to agent development. The portal's visual interface guides you through configuration without requiring code, making it easy to understand agent concepts while creating functional automation.
+Building your first AI agent in the Foundry portal provides an accessible entry point to agent development. The portal's visual interface guides you through configuration without requiring code, making it easy to understand agent concepts while creating functional automation.
 
-## Prerequisites for agent creation
+## Creating an agent in the Foundry portal
 
-Before creating an agent in the Azure portal, ensure you have:
-
-- An active Azure subscription
-- An Azure AI hub resource
-- An Azure AI project within your hub
-- At least one deployed model (such as GPT-4o or GPT-4)
-
-If you don't have these resources yet, you can create them through the Microsoft Foundry portal at https://ai.azure.com. The portal provides guided workflows for setting up your AI environment.
-
-## Creating an agent in the Azure portal
-
-The Azure portal streamlines agent creation through an intuitive interface:
+The Foundry portal streamlines agent creation through an intuitive interface:
 
 1. **Navigate to Microsoft Foundry** at https://ai.azure.com and sign in with your Azure credentials
 1. **Select your project** from the list of available projects, or create a new one
@@ -22,7 +11,7 @@ The Azure portal streamlines agent creation through an intuitive interface:
 1. **Enter agent details**:
    - **Name**: Provide a descriptive name for your agent
    - **Description**: Add a clear description of the agent's purpose
-   - **Model**: Select a deployed model from the dropdown
+   - **Model**: Select a deployed model from the dropdown, or deploy a new model
 
 The portal creates your agent and opens the configuration interface where you can refine its behavior and capabilities.
 
@@ -79,7 +68,7 @@ You can set maximum token limits for responses, preventing overly long outputs a
 
 ## Testing your agent in the portal
 
-The Azure portal includes an integrated playground for testing your agent before deployment. This testing environment lets you validate instructions, try different scenarios, and refine behavior based on results.
+The Foundry portal includes an integrated playground for testing your agent before deployment. This testing environment lets you validate instructions, try different scenarios, and refine behavior based on results.
 
 To test your agent, select the Playground tab and start a conversation. The playground maintains conversation history during your session, allowing you to test multi-turn interactions and verify the agent maintains context appropriately.
 
@@ -99,4 +88,4 @@ You add these tools through the Tools section in the agent configuration. Tool c
 
 Once you're satisfied with your agent's behavior in testing, you can deploy it for production use. The portal provides clear deployment status indicators and generates the connection information needed to integrate the agent into your applications. After deployment, you can access the agent through the Microsoft Foundry SDK or REST APIs.
 
-Building agents in the Azure portal provides an accessible, visual approach to agent development. The interface guides you through configuration while offering powerful capabilities for creating sophisticated automation.
+Building agents in the Foundry portal provides an accessible, visual approach to agent development. The interface guides you through configuration while offering powerful capabilities for creating sophisticated automation.

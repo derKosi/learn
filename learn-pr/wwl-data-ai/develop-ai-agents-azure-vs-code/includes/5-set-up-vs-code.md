@@ -10,7 +10,7 @@ The extension offers several key features that streamline agent development:
 
 **Agent discovery and management** - Browse, create, and manage AI agents within your Microsoft Foundry projects. View all your agents in the Azure Resources explorer without opening a browser.
 
-**Visual agent designer** - Configure agent instructions, tools, and capabilities through an intuitive interface. The designer provides the same power as the Azure portal while keeping you in your development environment.
+**Visual agent designer** - Configure agent instructions, tools, and capabilities through an intuitive interface. The designer provides the same power as the Foundry portal while keeping you in your development environment.
 
 **Integrated testing** - Test agents in real-time using the built-in playground. Verify behavior and iterate on designs without switching contexts or tools.
 

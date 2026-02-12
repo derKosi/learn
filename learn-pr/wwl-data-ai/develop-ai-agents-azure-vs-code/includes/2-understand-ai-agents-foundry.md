@@ -75,7 +75,7 @@ By embedding these practices early in development, you can deploy AI agents safe
 
 Microsoft Foundry Agent Service is a fully managed service designed to empower developers to securely build, deploy, and scale high-quality AI agents without managing underlying compute and storage resources. The service allows you to create agents tailored to your needs through custom instructions and advanced tools.
 
-Previously, creating agent-like experiences required significant coding effort using standard APIs. Microsoft Foundry Agent Service handles the complexity through a streamlined interface, enabling you to build agents via the Azure portal or in your own applications with fewer than 50 lines of code.
+Previously, creating agent-like experiences required significant coding effort using standard APIs. Microsoft Foundry Agent Service handles the complexity through a streamlined interface, enabling you to build agents via the Foundry portal or in your own applications with fewer than 50 lines of code.
 
 ### Key features of Microsoft Foundry Agent Service
 
