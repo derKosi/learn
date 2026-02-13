@@ -27,7 +27,7 @@ subjects:
 modules:
 - learn.wwl.implement-secure-ai-ready-infrastructure-azure-services
 - learn.wwl.secure-azure-openai-content-safety-controls
-- learn.wwl.secure-azure-openai-content-safety-controls
+- learn.wwl.implement-identity-based-security-azure-machine-learning
 - learn.wwl.implement-security-controls-azure-ai-ready-infrastructure
 trophy:
   uid: learn.wwl.secure-ai-ready-infrastructure.trophy
