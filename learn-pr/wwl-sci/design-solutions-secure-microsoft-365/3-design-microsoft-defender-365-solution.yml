@@ -8,6 +8,6 @@ metadata:
   author: ceperezb
   ms.author: ceperezb
   ms.topic: unit
-durationInMinutes: 11
+durationInMinutes: 10
 content: |
   [!include[](includes/3-design-microsoft-defender-365-solution.md)]
