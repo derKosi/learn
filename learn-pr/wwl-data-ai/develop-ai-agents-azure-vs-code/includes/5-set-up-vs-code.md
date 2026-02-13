@@ -68,8 +68,6 @@ Agents require deployed AI models to function. If you don't have a model deploym
    - **Capacity settings**: Configure throughput based on your needs
 1. Select **Deploy** and wait for deployment to complete
 
-![Animation of deploying a model in the Microsoft Foundry Visual Studio Code extension.](../media/vs-code-deploy-model.gif)
-
 The deployed model becomes available in dropdown menus when you create or configure agents.
 
 ## Creating your first agent in VS Code

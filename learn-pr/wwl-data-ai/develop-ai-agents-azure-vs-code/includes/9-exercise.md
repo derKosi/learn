@@ -5,8 +5,7 @@ In this exercise, you'll build and deploy an AI agent using Microsoft Foundry Ag
 
 Launch the exercise and follow the instructions.
 
-[![Button to launch exercise.](../media/launch-exercise.png)](https://go.microsoft.com/fwlink/?linkid=2305092&azure-portal=true)
+[![Button to launch exercise.](../media/launch-exercise.png)](https://go.microsoft.com/fwlink/?linkid=2352649&azure-portal=true)
 
 > [!TIP]
 > After completing the exercise, if you're finished exploring Foundry Agents, delete the Azure resources that you created during the exercise.
-
